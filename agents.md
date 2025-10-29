@@ -1,5 +1,18 @@
 # 🎯 INNOVA - Landing Page Premium | Agents Guide
 
+> Atualizado após o commit `48e91a6` (logo com fallback dourado, fotos no processo e nova grelha premium de Formações).
+
+### Status rápido para retomar amanhã
+- ✅ Logo `INNOVA` com fallback sólido + gradient condicionado (`assets/css/main.css:1788`).
+- ✅ Linha do tempo “Como Funciona” usa imagens (`assets/images/curso-*.jpg`) com dimensões fixas.
+- ✅ Seção de Formações reprojetada com cards `curso-card--hero`, `--atelier`, `--intensive`.
+- ✅ Footer inclui ícone de WhatsApp personalizado.
+- 🚧 Próximas prioridades:
+  1. Extrair estilos críticos para `critical.css` e inline no `<head>`.
+  2. Otimizar imagens (gerar WebP/AVIF e configurar `<picture>` no hero/processo/cursos).
+  3. Revisar delays/efeitos AOS após nova hierarquia.
+  4. Criar `checklist.md` com validações (responsividade, Lighthouse, a11y, SEO) e iniciar marcações.
+
 ## 📋 Visão Geral do Projeto
 
 **Cliente:** INNOVA  
@@ -270,25 +283,51 @@ innova-landing/
 **Timeline Vertical (3 steps):**
 
 **Step 1: Consulta**
-- Ícone: `devicon-docker-plain` (container/consulta)
+- Foto na moldura circular (80x80) usando `assets/images/curso-avancado.jpg`
 - Texto: Entre em contacto com nossa equipa para avaliação das suas necessidades.
 
 **Step 2: Seleção**
-- Ícone: `devicon-github-original` (escolha/repositório)
+- Foto na moldura circular (80x80) usando `assets/images/curso-tecnicas.jpg`
 - Texto: Receba recomendações personalizadas de produtos para o seu perfil profissional.
 
 **Step 3: Acompanhamento**
-- Ícone: `devicon-gitlab-plain` (suporte contínuo)
+- Foto na moldura circular (80x80) usando `assets/images/curso-certificacao.jpg`
 - Texto: Suporte contínuo e formação para maximizar os resultados dos seus tratamentos.
 
 **Estilo:**
 - Linha vertical conectando os steps
-- Números grandes ao lado dos ícones
+- Números grandes ao lado das fotos
 - Animação de reveal ao scroll
 
 ---
 
-### 6. Testemunhos Section
+### 6. Formações Section (Layout 2025)
+
+**Visão Geral:** Seção transformada em vitrine premium com grelha assimétrica (12 colunas) e três programas-chave.
+
+1. **Curso-card Hero (`curso-card--hero`):**
+   - Conteúdo textual à esquerda (eyebrow + título + descrição + highlights + CTA/metadata).
+   - Imagem full-height à direita (`curso-avancado.jpg`) com badges de vidro (hands-on, suporte, planeamento).
+   - Fundo `var(--gradient-dark)` e copy branca.
+
+2. **Programa Signature (`curso-card--atelier`):**
+   - Card vertical com ribbon “Mais procurado”.
+   - Métricas em duas colunas (módulos / hands-on).
+   - CTA `btn--outline` para inscrição.
+
+3. **Programa Imersivo (`curso-card--intensive`):**
+   - Gradiente dourado + cartão glass interno com agenda em bullet list.
+   - CTA primário “Agendar mentoria”.
+
+**Notas de Implementação:**
+- Grid: `grid-template-columns: repeat(12, minmax(0, 1fr))`.
+- Breakpoints: reorganizar para 1 coluna ≤ 1024px, ajustar ordens e espaçamentos.
+- Garantir imagens em `assets/images/curso-*.jpg` otimizadas e com `width`/`height`.
+- Atualizar delays AOS: hero (120ms), atelier (220ms), intensive (320ms).
+
+---
+
+### 7. Testemunhos Section
 
 **Título:** "O Que Dizem os Profissionais"
 
@@ -321,7 +360,7 @@ innova-landing/
 
 ---
 
-### 7. FAQ Section
+### 8. FAQ Section
 
 **Título:** "Perguntas Frequentes"
 
@@ -352,7 +391,7 @@ innova-landing/
 
 ---
 
-### 8. CTA Final Section
+### 9. CTA Final Section
 
 **Background:** Gradiente dourado
 **Texto:** Escuro
@@ -368,7 +407,7 @@ innova-landing/
 
 ---
 
-### 9. Contacto Section
+### 10. Contacto Section
 
 **Layout:** 2 colunas (desktop)
 
@@ -413,7 +452,7 @@ Campos:
 
 ---
 
-### 10. Footer
+### 11. Footer
 
 **Background:** Preto (#0f0f0f)
 **Texto:** Cinza claro
@@ -815,6 +854,7 @@ H1: "Precision. Harmony. Beauty." (único na página)
     H3: "Formação Contínua"
     H3: "Entrega Rápida"
   H2: "Como Funciona"
+  H2: "Formações e Cursos"
   H2: "O Que Dizem os Profissionais"
   H2: "Perguntas Frequentes"
   H2: "Entre em Contacto"
@@ -840,12 +880,11 @@ H1: "Precision. Harmony. Beauty." (único na página)
 | Benefícios - Suporte | Comunicação | `devicon-confluence-original` | White |
 | Benefícios - Formação | Educação | `devicon-embeddedc-plain` | White |
 | Benefícios - Entrega | Velocidade | `devicon-fastapi-plain` | White |
-| Processo - Consulta | Container | `devicon-docker-plain` | Primary black |
-| Processo - Seleção | Repositório | `devicon-github-original` | Primary black |
-| Processo - Acompanhamento | Continuous | `devicon-gitlab-plain` | Primary black |
+| Processo - Steps | Fotografia dedicada (`curso-avancado.jpg`, `curso-tecnicas.jpg`, `curso-certificacao.jpg`) | — | Moldura circular 80x80 |
 | Footer - Instagram | Social | `devicon-instagram-original` | White |
 | Footer - Facebook | Social | `devicon-facebook-plain` | White |
 | Footer - LinkedIn | Social | `devicon-linkedin-plain` | White |
+| Footer - WhatsApp | Social | SVG inline custom (path fill `currentColor`) | Hover #25D366 |
 
 **Sintaxe:**
 ```html
