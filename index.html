@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <!-- Meta Tags Básicas -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="INNOVA - Produtos estéticos premium em Portugal. Botox, Ácido Hialurónico, Bioestimuladores. Qualidade certificada para profissionais.">
+    <meta name="keywords" content="botox portugal, acido hialuronico, produtos esteticos, toxina botulinica, preenchimento facial, innova, estetica portugal">
+    <meta name="author" content="INNOVA">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="INNOVA - Precision. Harmony. Beauty.">
+    <meta property="og:description" content="Produtos estéticos premium para profissionais em Portugal.">
+    <meta property="og:image" content="https://innova.pt/assets/images/hero-bg.png">
+    <meta property="og:url" content="https://innova.pt">
+    <meta property="og:site_name" content="INNOVA">
+    <meta property="og:locale" content="pt_PT">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="INNOVA - Precision. Harmony. Beauty.">
+    <meta name="twitter:description" content="Produtos estéticos premium em Portugal.">
+    <meta name="twitter:image" content="https://innova.pt/assets/images/hero-bg.png">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://innova.pt">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo_innova_vector_Ft.png">
+    <link rel="apple-touch-icon" href="assets/images/logo_innova_vector_Ft.png">
+
+    <!-- Preconnect para otimização -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload recursos críticos -->
+    <link rel="preload" href="assets/images/logo_innova_vector_Ft.png" as="image">
+    <link rel="preload" href="assets/css/critical.css" as="style">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Devicon CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicon/devicon@latest/devicon.min.css">
+
+    <!-- AOS - Animate On Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <title>INNOVA - Precision. Harmony. Beauty. | Produtos Estéticos Premium</title>
+
+    <!-- Structured Data - MedicalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "INNOVA",
+      "description": "Produtos estéticos premium - Botox, Ácido Hialurónico, Bioestimuladores",
+      "url": "https://innova.pt",
+      "logo": "https://innova.pt/assets/images/logo_innova_vector_Ft.png",
+      "image": "https://innova.pt/assets/images/hero-bg.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Exemplo, 123",
+        "addressLocality": "Guimarães",
+        "addressRegion": "Braga",
+        "postalCode": "4800-000",
+        "addressCountry": "PT"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+351-253-XXX-XXX",
+        "contactType": "Sales",
+        "availableLanguage": ["Portuguese"]
+      },
+      "sameAs": [
+        "https://www.instagram.com/innova",
+        "https://www.facebook.com/innova",
+        "https://www.linkedin.com/company/innova"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - Product -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Ácido Hialurónico INNOVA",
+      "description": "Preenchimento dérmico premium de alta densidade",
+      "brand": {
+        "@type": "Brand",
+        "name": "INNOVA"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "EUR"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to Content (Acessibilidade) -->
+    <a href="#main-content" class="skip-to-content">Saltar para o conteúdo principal</a>
+
+    <!-- ========== HEADER / NAVIGATION ========== -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#inicio" class="nav__logo">
+                <img src="assets/images/logo_innova_vector_Ft.png" alt="Logo INNOVA - Produtos Estéticos Premium" width="180" height="50" loading="eager">
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#inicio" class="nav__link active-link">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#produtos" class="nav__link">Produtos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#beneficios" class="nav__link">Benefícios</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#testemunhos" class="nav__link">Testemunhos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contacto" class="nav__link">Contacto</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close" aria-label="Fechar menu">
+                    <i class="nav__close-icon"></i>
+                </div>
+            </div>
+
+            <a href="#contacto" class="btn btn--primary nav__cta">Solicitar Orçamento</a>
+
+            <div class="nav__toggle" id="nav-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="main-content">
+
+        <!-- ========== SECTION 1: HERO ========== -->
+        <section class="hero section" id="inicio">
+            <div class="hero__container container">
+                <div class="hero__content" data-aos="fade-up">
+                    <span class="hero__eyebrow">Excelência em Estética</span>
+
+                    <h1 class="hero__title">
+                        Precision.<br>
+                        Harmony.<br>
+                        <span class="gradient-text">Beauty.</span>
+                    </h1>
+
+                    <p class="hero__description">
+                        Produtos estéticos premium que unem ciência e arte. Transforme a beleza natural dos seus pacientes com a qualidade INNOVA.
+                    </p>
+
+                    <div class="hero__cta">
+                        <a href="#produtos" class="btn btn--primary btn--large">Explorar Produtos</a>
+                        <a href="#contacto" class="btn btn--outline btn--large">Falar com Especialista</a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="hero__stats" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat">
+                            <span class="stat__number" data-target="15">15</span><span class="stat__plus">+</span>
+                            <span class="stat__label">Anos de Experiência</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__number" data-target="5000">5000</span><span class="stat__plus">+</span>
+                            <span class="stat__label">Profissionais Satisfeitos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__number" data-target="100">100</span><span class="stat__plus">%</span>
+                            <span class="stat__label">Qualidade Garantida</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero__image" data-aos="fade-left" data-aos-delay="100">
+                    <div class="hero__image-wrapper">
+                        <img src="assets/images/hero-bg.png" alt="Produtos estéticos premium INNOVA - Precisão e qualidade" width="800" height="900" loading="eager">
+                        <div class="hero__decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 2: PRODUTOS ========== -->
+        <section class="produtos section" id="produtos">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__eyebrow">Nossa Linha Premium</span>
+                    <h2 class="section__title">Produtos de <span class="gradient-text">Excelência</span></h2>
+                    <p class="section__description">
+                        Seleção cuidadosa de produtos que proporcionam resultados extraordinários e duradouros.
+                    </p>
+                </div>
+
+                <div class="produtos__grid">
+                    <!-- Card 1: Toxina Botulínica -->
+                    <article class="produto-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="produto-card__icon">
+                            <i class="devicon-chrome-original" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="produto-card__title">Toxina Botulínica</h3>
+                        <p class="produto-card__description">
+                            Resultados naturais e precisos para suavização de linhas de expressão. Qualidade farmacêutica premium.
+                        </p>
+                        <ul class="produto-card__features">
+                            <li><span class="check-icon"></span> Efeito prolongado</li>
+                            <li><span class="check-icon"></span> Aplicação precisa</li>
+                            <li><span class="check-icon"></span> Resultados naturais</li>
+                            <li><span class="check-icon"></span> Segurança comprovada</li>
+                        </ul>
+                        <a href="#contacto" class="produto-card__cta">Saiba Mais ’</a>
+                    </article>
+
+                    <!-- Card 2: Ácido Hialurónico (DESTAQUE) -->
+                    <article class="produto-card produto-card--featured" data-aos="fade-up" data-aos-delay="200">
+                        <span class="produto-card__badge">Mais Popular</span>
+                        <div class="produto-card__icon">
+                            <i class="devicon-dropbox-original" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="produto-card__title">Ácido Hialurónico</h3>
+                        <p class="produto-card__description">
+                            Preenchimento dérmico de alta densidade. Hidratação profunda e restauração de volume facial.
+                        </p>
+                        <ul class="produto-card__features">
+                            <li><span class="check-icon"></span> Múltiplas densidades</li>
+                            <li><span class="check-icon"></span> Biocompatível</li>
+                            <li><span class="check-icon"></span> Efeito volumizador</li>
+                            <li><span class="check-icon"></span> Hidratação intensa</li>
+                        </ul>
+                        <a href="#contacto" class="produto-card__cta">Saiba Mais ’</a>
+                    </article>
+
+                    <!-- Card 3: Bioestimuladores -->
+                    <article class="produto-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="produto-card__icon">
+                            <i class="devicon-slack-original" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="produto-card__title">Bioestimuladores</h3>
+                        <p class="produto-card__description">
+                            Estimulação natural de colágeno. Rejuvenescimento progressivo e duradouro da pele.
+                        </p>
+                        <ul class="produto-card__features">
+                            <li><span class="check-icon"></span> Estímulo de colágeno</li>
+                            <li><span class="check-icon"></span> Efeito progressivo</li>
+                            <li><span class="check-icon"></span> Resultados duradouros</li>
+                            <li><span class="check-icon"></span> Rejuvenescimento global</li>
+                        </ul>
+                        <a href="#contacto" class="produto-card__cta">Saiba Mais ’</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 3: BENEFÍCIOS ========== -->
+        <section class="beneficios section" id="beneficios">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <h2 class="section__title section__title--white">Por Que Escolher <span class="gradient-text">INNOVA</span></h2>
+                </div>
+
+                <div class="beneficios__grid">
+                    <!-- Benefício 1 -->
+                    <article class="beneficio-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="beneficio-card__icon">
+                            <i class="devicon-denojs-original" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="beneficio-card__title">Qualidade Certificada</h3>
+                        <p class="beneficio-card__description">
+                            Produtos aprovados e testados segundo normas internacionais de segurança.
+                        </p>
+                    </article>
+
+                    <!-- Benefício 2 -->
+                    <article class="beneficio-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="beneficio-card__icon">
+                            <i class="devicon-confluence-original" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="beneficio-card__title">Suporte Técnico</h3>
+                        <p class="beneficio-card__description">
+                            Equipa especializada disponível para consultoria e esclarecimento de dúvidas.
+                        </p>
+                    </article>
+
+                    <!-- Benefício 3 -->
+                    <article class="beneficio-card glass-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="beneficio-card__icon">
+                            <i class="devicon-embeddedc-plain" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="beneficio-card__title">Formação Contínua</h3>
+                        <p class="beneficio-card__description">
+                            Acesso a workshops e formações sobre técnicas de aplicação avançadas.
+                        </p>
+                    </article>
+
+                    <!-- Benefício 4 -->
+                    <article class="beneficio-card glass-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="beneficio-card__icon">
+                            <i class="devicon-fastapi-plain" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="beneficio-card__title">Entrega Rápida</h3>
+                        <p class="beneficio-card__description">
+                            Logística eficiente com entrega em todo território português.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 4: PROCESSO ========== -->
+        <section class="processo section" id="processo">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <h2 class="section__title">Como <span class="gradient-text">Funciona</span></h2>
+                </div>
+
+                <div class="processo__timeline">
+                    <!-- Step 1 -->
+                    <article class="processo-step" data-aos="fade-right" data-aos-delay="100">
+                        <div class="processo-step__number">01</div>
+                        <div class="processo-step__icon">
+                            <i class="devicon-docker-plain" aria-hidden="true"></i>
+                        </div>
+                        <div class="processo-step__content">
+                            <h3 class="processo-step__title">Consulta</h3>
+                            <p class="processo-step__description">
+                                Entre em contacto com nossa equipa para avaliação das suas necessidades.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Step 2 -->
+                    <article class="processo-step" data-aos="fade-right" data-aos-delay="200">
+                        <div class="processo-step__number">02</div>
+                        <div class="processo-step__icon">
+                            <i class="devicon-github-original" aria-hidden="true"></i>
+                        </div>
+                        <div class="processo-step__content">
+                            <h3 class="processo-step__title">Seleção</h3>
+                            <p class="processo-step__description">
+                                Receba recomendações personalizadas de produtos para o seu perfil profissional.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Step 3 -->
+                    <article class="processo-step" data-aos="fade-right" data-aos-delay="300">
+                        <div class="processo-step__number">03</div>
+                        <div class="processo-step__icon">
+                            <i class="devicon-gitlab-plain" aria-hidden="true"></i>
+                        </div>
+                        <div class="processo-step__content">
+                            <h3 class="processo-step__title">Acompanhamento</h3>
+                            <p class="processo-step__description">
+                                Suporte contínuo e formação para maximizar os resultados dos seus tratamentos.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 5: TESTEMUNHOS ========== -->
+        <section class="testemunhos section" id="testemunhos">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <h2 class="section__title">O Que Dizem os <span class="gradient-text">Profissionais</span></h2>
+                </div>
+
+                <div class="testimonials__wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonials__carousel" role="region" aria-label="Testemunhos de clientes">
+                        <!-- Testemunho 1 -->
+                        <article class="testimonial-card">
+                            <div class="testimonial-card__quote" aria-hidden="true">"</div>
+                            <div class="testimonial-card__rating" aria-label="5 estrelas">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <p class="testimonial-card__text">
+                                "A qualidade dos produtos INNOVA é incomparável. Os meus pacientes notam resultados naturais e duradouros. A equipa de suporte é excecional."
+                            </p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">SM</div>
+                                <div class="testimonial-card__info">
+                                    <h4 class="testimonial-card__name">Dra. Sofia Mendes</h4>
+                                    <p class="testimonial-card__role">Médica Dermatologista, Lisboa</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Testemunho 2 -->
+                        <article class="testimonial-card">
+                            <div class="testimonial-card__quote" aria-hidden="true">"</div>
+                            <div class="testimonial-card__rating" aria-label="5 estrelas">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <p class="testimonial-card__text">
+                                "Trabalho com INNOVA há 5 anos. A consistência dos produtos e a entrega rápida fazem toda a diferença na minha clínica."
+                            </p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">RA</div>
+                                <div class="testimonial-card__info">
+                                    <h4 class="testimonial-card__name">Dr. Ricardo Alves</h4>
+                                    <p class="testimonial-card__role">Cirurgião Plástico, Porto</p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Testemunho 3 -->
+                        <article class="testimonial-card">
+                            <div class="testimonial-card__quote" aria-hidden="true">"</div>
+                            <div class="testimonial-card__rating" aria-label="5 estrelas">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <p class="testimonial-card__text">
+                                "Formação de qualidade e produtos premium. INNOVA elevou o padrão dos tratamentos que ofereço. Recomendo sem reservas."
+                            </p>
+                            <div class="testimonial-card__author">
+                                <div class="testimonial-card__avatar">AC</div>
+                                <div class="testimonial-card__info">
+                                    <h4 class="testimonial-card__name">Dra. Ana Costa</h4>
+                                    <p class="testimonial-card__role">Esteticista, Braga</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Carousel Navigation -->
+                    <div class="carousel__dots">
+                        <button class="carousel__dot active" aria-label="Ir para testemunho 1"></button>
+                        <button class="carousel__dot" aria-label="Ir para testemunho 2"></button>
+                        <button class="carousel__dot" aria-label="Ir para testemunho 3"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 6: FAQ ========== -->
+        <section class="faq section" id="faq">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <h2 class="section__title">Perguntas <span class="gradient-text">Frequentes</span></h2>
+                </div>
+
+                <div class="faq__accordion" data-aos="fade-up" data-aos-delay="100">
+                    <!-- FAQ Item 1 -->
+                    <article class="faq__item">
+                        <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-1">
+                            <span>Os produtos INNOVA são certificados?</span>
+                            <span class="faq__icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq__answer" id="faq-answer-1">
+                            <p>Sim, todos os nossos produtos possuem certificações internacionais e cumprem rigorosamente as normas de segurança europeias.</p>
+                        </div>
+                    </article>
+
+                    <!-- FAQ Item 2 -->
+                    <article class="faq__item">
+                        <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-2">
+                            <span>Fornecem formação para aplicação dos produtos?</span>
+                            <span class="faq__icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq__answer" id="faq-answer-2">
+                            <p>Oferecemos workshops regulares e consultoria técnica para profissionais que adquirem os nossos produtos.</p>
+                        </div>
+                    </article>
+
+                    <!-- FAQ Item 3 -->
+                    <article class="faq__item">
+                        <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-3">
+                            <span>Qual o prazo de entrega em Portugal?</span>
+                            <span class="faq__icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq__answer" id="faq-answer-3">
+                            <p>Entregamos em 24-48h em Portugal Continental. Ilhas entre 3-5 dias úteis.</p>
+                        </div>
+                    </article>
+
+                    <!-- FAQ Item 4 -->
+                    <article class="faq__item">
+                        <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-4">
+                            <span>É necessário ser profissional de saúde para adquirir?</span>
+                            <span class="faq__icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq__answer" id="faq-answer-4">
+                            <p>Sim, os nossos produtos são exclusivos para médicos, enfermeiros e profissionais certificados em estética.</p>
+                        </div>
+                    </article>
+
+                    <!-- FAQ Item 5 -->
+                    <article class="faq__item">
+                        <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-5">
+                            <span>Oferecem garantia nos produtos?</span>
+                            <span class="faq__icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq__answer" id="faq-answer-5">
+                            <p>Todos os produtos têm garantia de qualidade. Em caso de defeito de fábrica, substituição imediata.</p>
+                        </div>
+                    </article>
+
+                    <!-- FAQ Item 6 -->
+                    <article class="faq__item">
+                        <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-6">
+                            <span>Como posso fazer uma encomenda?</span>
+                            <span class="faq__icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="faq__answer" id="faq-answer-6">
+                            <p>Entre em contacto através do formulário, email ou telefone. Nossa equipa processará o seu pedido rapidamente.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 7: CTA FINAL ========== -->
+        <section class="cta-final section" id="cta-final">
+            <div class="container">
+                <div class="cta-final__content" data-aos="zoom-in">
+                    <h2 class="cta-final__title">Pronto para Elevar os Seus Tratamentos?</h2>
+                    <p class="cta-final__description">Junte-se a milhares de profissionais que confiam na INNOVA.</p>
+                    <a href="#contacto" class="btn btn--large cta-final__btn">Solicitar Orçamento Agora</a>
+                    <p class="cta-final__note">Resposta em menos de 24 horas</p>
+                </div>
+                <!-- Decoração de ícones flutuantes -->
+                <div class="cta-final__decoration" aria-hidden="true">
+                    <i class="devicon-chrome-original"></i>
+                    <i class="devicon-dropbox-original"></i>
+                    <i class="devicon-slack-original"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECTION 8: CONTACTO ========== -->
+        <section class="contacto section" id="contacto">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <h2 class="section__title">Entre em <span class="gradient-text">Contacto</span></h2>
+                </div>
+
+                <div class="contacto__wrapper">
+                    <!-- Coluna Esquerda: Informações -->
+                    <div class="contacto__info" data-aos="fade-right">
+                        <div class="contacto__info-item">
+                            <h3 class="contacto__info-title">Morada</h3>
+                            <p class="contacto__info-text">
+                                INNOVA Estética<br>
+                                Rua Exemplo, 123<br>
+                                4800-000 Guimarães, Portugal
+                            </p>
+                        </div>
+
+                        <div class="contacto__info-item">
+                            <h3 class="contacto__info-title">Email</h3>
+                            <p class="contacto__info-text">
+                                <a href="mailto:contacto@innova.pt">contacto@innova.pt</a><br>
+                                <a href="mailto:vendas@innova.pt">vendas@innova.pt</a>
+                            </p>
+                        </div>
+
+                        <div class="contacto__info-item">
+                            <h3 class="contacto__info-title">Telefone</h3>
+                            <p class="contacto__info-text">
+                                <a href="tel:+351253XXXXXX">+351 253 XXX XXX</a><br>
+                                <a href="tel:+35191XXXXXXX">+351 91X XXX XXX</a>
+                            </p>
+                        </div>
+
+                        <div class="contacto__info-item">
+                            <h3 class="contacto__info-title">Horário</h3>
+                            <p class="contacto__info-text">
+                                Segunda a Sexta: 9h - 18h<br>
+                                Sábado: 9h - 13h
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Coluna Direita: Formulário -->
+                    <div class="contacto__form-wrapper" data-aos="fade-left">
+                        <form class="contacto__form" id="contact-form">
+                            <div class="form__group">
+                                <label for="nome" class="form__label">Nome Completo *</label>
+                                <input type="text" id="nome" name="nome" class="form__input" required aria-required="true">
+                            </div>
+
+                            <div class="form__group">
+                                <label for="email" class="form__label">Email *</label>
+                                <input type="email" id="email" name="email" class="form__input" required aria-required="true">
+                            </div>
+
+                            <div class="form__group">
+                                <label for="telefone" class="form__label">Telefone *</label>
+                                <input type="tel" id="telefone" name="telefone" class="form__input" required aria-required="true">
+                            </div>
+
+                            <div class="form__group">
+                                <label for="profissao" class="form__label">Profissão *</label>
+                                <select id="profissao" name="profissao" class="form__select" required aria-required="true">
+                                    <option value="">Selecione...</option>
+                                    <option value="medico-dermatologista">Médico/a Dermatologista</option>
+                                    <option value="cirurgiao-plastico">Cirurgião/ã Plástico/a</option>
+                                    <option value="enfermeiro">Enfermeiro/a</option>
+                                    <option value="esteticista">Esteticista</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+
+                            <div class="form__group form__group--full">
+                                <label for="mensagem" class="form__label">Mensagem *</label>
+                                <textarea id="mensagem" name="mensagem" class="form__textarea" rows="5" required aria-required="true"></textarea>
+                            </div>
+
+                            <div class="form__group form__group--full">
+                                <label class="form__checkbox">
+                                    <input type="checkbox" name="privacidade" required aria-required="true">
+                                    <span>Aceito a Política de Privacidade *</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn--primary btn--large form__submit">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <!-- Coluna 1: Logo & Slogan -->
+            <div class="footer__column">
+                <a href="#inicio" class="footer__logo">
+                    <img src="assets/images/logo_innova_vector_Ft.png" alt="Logo INNOVA" width="180" height="50" loading="lazy">
+                </a>
+                <p class="footer__tagline">Precision. Harmony. Beauty.</p>
+                <p class="footer__text">Produtos estéticos premium para profissionais exigentes.</p>
+            </div>
+
+            <!-- Coluna 2: Links Rápidos -->
+            <div class="footer__column">
+                <h4 class="footer__title">Links Rápidos</h4>
+                <ul class="footer__list">
+                    <li><a href="#inicio" class="footer__link">Início</a></li>
+                    <li><a href="#produtos" class="footer__link">Produtos</a></li>
+                    <li><a href="#sobre" class="footer__link">Sobre Nós</a></li>
+                    <li><a href="#contacto" class="footer__link">Contacto</a></li>
+                    <li><a href="#privacidade" class="footer__link">Política de Privacidade</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna 3: Produtos -->
+            <div class="footer__column">
+                <h4 class="footer__title">Produtos</h4>
+                <ul class="footer__list">
+                    <li><a href="#produtos" class="footer__link">Toxina Botulínica</a></li>
+                    <li><a href="#produtos" class="footer__link">Ácido Hialurónico</a></li>
+                    <li><a href="#produtos" class="footer__link">Bioestimuladores</a></li>
+                    <li><a href="#produtos" class="footer__link">Catálogo Completo</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna 4: Redes Sociais -->
+            <div class="footer__column">
+                <h4 class="footer__title">Redes Sociais</h4>
+                <div class="footer__social">
+                    <a href="https://instagram.com/innova" class="footer__social-link" aria-label="Instagram INNOVA" target="_blank" rel="noopener noreferrer">
+                        <i class="devicon-instagram-original" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://facebook.com/innova" class="footer__social-link" aria-label="Facebook INNOVA" target="_blank" rel="noopener noreferrer">
+                        <i class="devicon-facebook-plain" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/innova" class="footer__social-link" aria-label="LinkedIn INNOVA" target="_blank" rel="noopener noreferrer">
+                        <i class="devicon-linkedin-plain" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer__copyright">
+            <div class="container">
+                <p>&copy; 2025 INNOVA. Todos os direitos reservados.</p>
+                <p>Desenvolvido com =› em Portugal</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- JavaScript Principal -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Lazy Loading -->
+    <script src="assets/js/lazy-load.js"></script>
+
+    <!-- Inicialização AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
