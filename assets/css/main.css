@@ -160,6 +160,7 @@ select {
 .gradient-text {
   background: var(--gradient-gold);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
@@ -1546,3 +1547,81 @@ select {
     gap: var(--spacing-lg);
   }
 }
+
+/* =====================
+   Enhancements: logo text, processo photos, courses layout tweaks, whatsapp
+   ===================== */
+
+/* Make nav logo use display font and gradient for lightweight branding */
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-weight: var(--font-bold);
+  font-size: 1.375rem; /* ~22px */
+  color: var(--secondary-white);
+  letter-spacing: 0.06em;
+  background: linear-gradient(90deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-text--footer {
+  font-size: 1.125rem;
+  color: var(--accent-gold-light);
+  -webkit-text-fill-color: unset;
+}
+
+/* Process photos inside circular icon container */
+.processo-step__icon {
+  width: 80px;
+  height: 80px;
+  background: var(--secondary-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.processo-step__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Slight layout improvement for course cards */
+.curso-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.curso-card__content {
+  padding: var(--spacing-lg);
+}
+
+/* WhatsApp social icon variant */
+.footer__social-link--whatsapp {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--secondary-white);
+}
+
+.footer__social-link--whatsapp:hover {
+  background: #25D366;
+  color: #ffffff;
+  transform: translateY(-4px);
+}
+
