@@ -37,7 +37,7 @@
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
   --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.24);
 
-  /* Transições */
+  /* Transiï¿½ï¿½es */
   --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -66,7 +66,7 @@
   --font-semibold: 600;
   --font-bold: 700;
 
-  /* Espaçamento */
+  /* Espaï¿½amento */
   --spacing-xs: 0.5rem;   /* 8px */
   --spacing-sm: 1rem;     /* 16px */
   --spacing-md: 1.5rem;   /* 24px */
@@ -301,6 +301,15 @@ select {
   height: 80px;
 }
 
+.nav__logo {
+  background: var(--secondary-white);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
 .nav__logo img {
   height: 40px;
   width: auto;
@@ -488,6 +497,14 @@ select {
   transform: translateY(-12px) scale(1.02);
 }
 
+.produto-card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: var(--spacing-md);
+}
+
 .produto-card__badge {
   position: absolute;
   top: -12px;
@@ -500,6 +517,7 @@ select {
   font-weight: var(--font-bold);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  z-index: 1;
 }
 
 .produto-card__icon {
@@ -560,7 +578,7 @@ select {
 }
 
 /* ========================================
-   8. BENEFÍCIOS SECTION
+   8. BENEFï¿½CIOS SECTION
    ======================================== */
 
 .beneficios {
@@ -1202,7 +1220,7 @@ select {
     grid-template-columns: 1fr;
   }
 
-  /* Benefícios Mobile */
+  /* Benefï¿½cios Mobile */
   .beneficios__grid {
     grid-template-columns: 1fr;
   }
@@ -1312,4 +1330,187 @@ select {
 
 .btn {
   contain: layout style paint;
+}
+
+/* ========================================
+   17. FORMAÃ‡Ã•ES SECTION
+   ======================================== */
+
+.formacoes {
+  background: var(--background-light);
+}
+
+.formacoes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.curso-card {
+  background: var(--secondary-white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+}
+
+.curso-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.curso-card__image-wrapper {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.curso-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.curso-card:hover .curso-card__image {
+  transform: scale(1.1);
+}
+
+.curso-card__badge {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  width: 48px;
+  height: 48px;
+  background: var(--secondary-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.curso-card__badge--popular {
+  background: var(--gradient-gold);
+}
+
+.curso-card__content {
+  padding: var(--spacing-xl);
+}
+
+.curso-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.curso-card__category,
+.curso-card__duration {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--text-sm);
+  color: var(--gray-700);
+  font-weight: var(--font-medium);
+}
+
+.curso-card__category i,
+.curso-card__duration i {
+  font-size: 16px;
+  color: var(--accent-gold);
+}
+
+.curso-card__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--spacing-sm);
+  color: var(--primary-black);
+}
+
+.curso-card__description {
+  color: var(--gray-700);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+  font-size: var(--text-sm);
+}
+
+.curso-card__topics {
+  margin-bottom: var(--spacing-lg);
+  padding-left: 0;
+}
+
+.curso-card__topics li {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--text-sm);
+  color: var(--gray-700);
+}
+
+.curso-card__topics i {
+  font-size: 12px;
+  color: var(--accent-gold);
+}
+
+/* FormaÃ§Ãµes Stats */
+.formacoes__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-xl);
+  padding: var(--spacing-2xl);
+  background: var(--gradient-dark);
+  border-radius: 16px;
+}
+
+.formacao-stat {
+  text-align: center;
+  color: var(--secondary-white);
+}
+
+.formacao-stat i {
+  font-size: 48px;
+  color: var(--accent-gold);
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.formacao-stat__number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  color: var(--accent-gold);
+  margin-bottom: var(--spacing-xs);
+}
+
+.formacao-stat__label {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--gray-300);
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .formacoes__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .formacoes__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .formacoes__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formacoes__stats {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
 }
