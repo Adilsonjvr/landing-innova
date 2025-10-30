@@ -1262,47 +1262,69 @@ select {
   padding-left: 4px;
 }
 
+.footer__social-text {
+  color: var(--gray-400);
+  font-size: var(--text-sm);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+}
+
 .footer__social {
   display: flex;
-  gap: var(--spacing-md);
+  flex-direction: column;
+  gap: var(--spacing-sm);
   margin-top: var(--spacing-md);
 }
 
 .footer__social-link {
-  width: 48px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 24px;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
   color: var(--secondary-white);
   transition: var(--transition-smooth);
-  position: relative;
-  overflow: hidden;
-  border: 2px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.1);
 }
 
-.footer__social-link::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-gold);
-  opacity: 0;
-  transition: var(--transition-smooth);
-  z-index: -1;
+.footer__social-link i,
+.footer__social-link svg {
+  font-size: 20px;
+  flex-shrink: 0;
 }
 
-.footer__social-link:hover {
-  color: var(--primary-black);
-  transform: translateY(-6px) scale(1.1);
-  border-color: var(--accent-gold);
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+.footer__social-name {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
 }
 
-.footer__social-link:hover::before {
-  opacity: 1;
+.footer__social-link--instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  border-color: #e1306c;
+  transform: translateX(8px);
+  box-shadow: 0 4px 16px rgba(225, 48, 108, 0.3);
+}
+
+.footer__social-link--facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+  transform: translateX(8px);
+  box-shadow: 0 4px 16px rgba(24, 119, 242, 0.3);
+}
+
+.footer__social-link--linkedin:hover {
+  background: #0077b5;
+  border-color: #0077b5;
+  transform: translateX(8px);
+  box-shadow: 0 4px 16px rgba(0, 119, 181, 0.3);
+}
+
+.footer__social-link--whatsapp:hover {
+  background: #25D366;
+  border-color: #25D366;
+  transform: translateX(8px);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
 }
 
 .footer__copyright {
