@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
     heroTimeline
-        .from('.hero__subtitle', {
+        .from('.hero__eyebrow', {
             opacity: 0,
             y: 30,
             duration: 0.8
@@ -96,6 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Product card hover effects with GSAP
     const productCards = document.querySelectorAll('.produto-card');
     productCards.forEach(card => {
+        const icon = card.querySelector('.produto-card__icon');
+
         card.addEventListener('mouseenter', () => {
             gsap.to(card, {
                 y: -10,
@@ -104,12 +106,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 ease: 'power2.out'
             });
 
-            gsap.to(card.querySelector('.produto-card__icon'), {
-                rotation: 360,
-                scale: 1.1,
-                duration: 0.6,
-                ease: 'back.out(2)'
-            });
+            if (icon) {
+                gsap.to(icon, {
+                    rotation: 360,
+                    scale: 1.1,
+                    duration: 0.6,
+                    ease: 'back.out(2)'
+                });
+            }
         });
 
         card.addEventListener('mouseleave', () => {
@@ -120,12 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 ease: 'power2.out'
             });
 
-            gsap.to(card.querySelector('.produto-card__icon'), {
-                rotation: 0,
-                scale: 1,
-                duration: 0.4,
-                ease: 'power2.out'
-            });
+            if (icon) {
+                gsap.to(icon, {
+                    rotation: 0,
+                    scale: 1,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                });
+            }
         });
     });
 

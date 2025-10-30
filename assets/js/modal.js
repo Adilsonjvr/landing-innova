@@ -188,11 +188,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Add spinner animation CSS
-const style = document.createElement('style');
-style.textContent = `
+const modalSpinnerStyles = document.createElement('style');
+modalSpinnerStyles.textContent = `
     @keyframes spin {
         from { transform: rotate(0deg); }
         to { transform: rotate(360deg); }
     }
 `;
-document.head.appendChild(style);
+document.head.appendChild(modalSpinnerStyles);

@@ -9,20 +9,20 @@
    1. LAZY LOADING COM INTERSECTION OBSERVER
    ======================================== */
 
-// Configuração do Intersection Observer
+// Configuraï¿½ï¿½o do Intersection Observer
 const imageObserverConfig = {
   root: null, // viewport
   rootMargin: '50px', // Carregar 50px antes de entrar no viewport
   threshold: 0.01
 };
 
-// Função para carregar imagem
+// Funï¿½ï¿½o para carregar imagem
 function loadImage(img) {
-  // Se tiver data-src, usa ele; senão, já está carregada
+  // Se tiver data-src, usa ele; senï¿½o, jï¿½ estï¿½ carregada
   const src = img.getAttribute('data-src');
 
   if (src) {
-    // Criar nova imagem para pré-carregar
+    // Criar nova imagem para prï¿½-carregar
     const tempImg = new Image();
 
     tempImg.onload = () => {
@@ -77,18 +77,31 @@ lazyImages.forEach(img => {
   // Adicionar classe inicial
   img.classList.add('lazy-img');
 
-  // Se o browser não suportar loading="lazy" nativamente, usar observer
+  // Se o browser nï¿½o suportar loading="lazy" nativamente, usar observer
   if ('loading' in HTMLImageElement.prototype) {
-    // Browser suporta lazy loading nativo, só adicionar classe loaded quando carregar
-    if (img.complete) {
+    // Browser suporta lazy loading nativo, sï¿½ adicionar classe loaded quando carregar
+    if (img.complete && img.naturalHeight !== 0) {
+      // Imagem jï¿½ carregada, adicionar loaded imediatamente
       img.classList.add('loaded');
     } else {
+      // Adicionar listeners para garantir que loaded seja adicionado
       img.addEventListener('load', () => {
         img.classList.add('loaded');
       });
+
+      // Fallback: verificar periodicamente se a imagem jï¿½ carregou
+      const checkInterval = setInterval(() => {
+        if (img.complete && img.naturalHeight !== 0) {
+          img.classList.add('loaded');
+          clearInterval(checkInterval);
+        }
+      }, 100);
+
+      // Limpar intervalo apï¿½s 5 segundos
+      setTimeout(() => clearInterval(checkInterval), 5000);
     }
   } else {
-    // Browser não suporta, usar Intersection Observer
+    // Browser nï¿½o suporta, usar Intersection Observer
     imageObserver.observe(img);
   }
 });
@@ -106,7 +119,7 @@ const bgObserver = new IntersectionObserver((entries, observer) => {
       const bg = element.getAttribute('data-bg');
 
       if (bg) {
-        // Pré-carregar imagem
+        // Prï¿½-carregar imagem
         const tempImg = new Image();
         tempImg.onload = () => {
           element.style.backgroundImage = `url(${bg})`;
@@ -127,90 +140,35 @@ lazyBackgrounds.forEach(bg => bgObserver.observe(bg));
    3. BLUR-UP EFFECT (PLACEHOLDER)
    ======================================== */
 
-// Adicionar estilos para blur-up effect
-const blurStyles = document.createElement('style');
-blurStyles.textContent = `
-  .lazy-img {
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out, filter 0.4s ease-in-out;
-  }
-
-  .lazy-img.loading {
-    opacity: 0.5;
-    filter: blur(10px);
-  }
-
-  .lazy-img.loaded {
-    opacity: 1;
-    filter: blur(0);
-  }
-
-  .lazy-img.error {
-    opacity: 0.5;
-    background: #f0f0f0;
-  }
-
-  .bg-loaded {
-    animation: bgFadeIn 0.5s ease-in-out;
-  }
-
-  @keyframes bgFadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  /* Loading skeleton */
-  .lazy-img.loading::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      #f0f0f0 25%,
-      #e0e0e0 50%,
-      #f0f0f0 75%
-    );
-    background-size: 200% 100%;
-    animation: loading 1.5s infinite;
-  }
-
-  @keyframes loading {
-    0% {
-      background-position: 200% 0;
-    }
-    100% {
-      background-position: -200% 0;
-    }
-  }
-
-  .lazy-img.loaded::before {
-    display: none;
-  }
-`;
-document.head.appendChild(blurStyles);
+// Os estilos para lazy-img jï¿½ estï¿½o definidos no critical.css
+// Removemos a criaï¿½ï¿½o dinï¿½mica para evitar conflitos
 
 /* ========================================
-   4. PRELOAD IMAGENS CRÍTICAS
+   4. PRELOAD IMAGENS CRï¿½TICAS
    ======================================== */
 
-// Imagens com loading="eager" são críticas e devem carregar imediatamente
+// Imagens com loading="eager" sï¿½o crï¿½ticas e devem carregar imediatamente
 const eagerImages = document.querySelectorAll('img[loading="eager"]');
 
 eagerImages.forEach(img => {
   // Adicionar classe loaded quando carregar
-  if (img.complete) {
+  if (img.complete && img.naturalHeight !== 0) {
     img.classList.add('loaded');
   } else {
     img.addEventListener('load', () => {
       img.classList.add('loaded');
     });
+
+    // Fallback: verificar periodicamente
+    const checkInterval = setInterval(() => {
+      if (img.complete && img.naturalHeight !== 0) {
+        img.classList.add('loaded');
+        clearInterval(checkInterval);
+      }
+    }, 50);
+
+    // Limpar intervalo apï¿½s 3 segundos
+    setTimeout(() => clearInterval(checkInterval), 3000);
   }
 });
 
@@ -220,7 +178,7 @@ eagerImages.forEach(img => {
 
 // Verificar suporte a Intersection Observer
 if (!('IntersectionObserver' in window)) {
-  console.warn('IntersectionObserver não suportado. Carregando todas as imagens...');
+  console.warn('IntersectionObserver nï¿½o suportado. Carregando todas as imagens...');
 
   // Carregar todas as imagens imediatamente
   lazyImages.forEach(img => {
@@ -247,7 +205,7 @@ const totalImages = lazyImages.length;
 document.addEventListener('imageLoaded', () => {
   imagesLoaded++;
 
-  // Log de progresso (remover em produção)
+  // Log de progresso (remover em produï¿½ï¿½o)
   if (process.env.NODE_ENV === 'development') {
     console.log(`Imagens carregadas: ${imagesLoaded}/${totalImages}`);
   }
@@ -267,7 +225,7 @@ document.addEventListener('imageLoaded', () => {
 
 function retryLoadImage(img, retries = 3) {
   if (retries <= 0) {
-    console.error('Falha ao carregar imagem após múltiplas tentativas:', img.getAttribute('data-src'));
+    console.error('Falha ao carregar imagem apï¿½s mï¿½ltiplas tentativas:', img.getAttribute('data-src'));
     return;
   }
 
@@ -305,8 +263,8 @@ document.addEventListener('imageLoaded', (e) => {
    8. PRELOAD NEXT SECTION IMAGES
    ======================================== */
 
-// Quando uma seção entra no viewport, pré-carregar imagens da próxima seção
-const sections = document.querySelectorAll('section');
+// Quando uma seï¿½ï¿½o entra no viewport, prï¿½-carregar imagens da prï¿½xima seï¿½ï¿½o
+const preloadSections = document.querySelectorAll('section');
 
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -315,7 +273,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
       const nextSection = currentSection.nextElementSibling;
 
       if (nextSection && nextSection.tagName === 'SECTION') {
-        // Pré-carregar imagens da próxima seção
+        // Prï¿½-carregar imagens da prï¿½xima seï¿½ï¿½o
         const nextImages = nextSection.querySelectorAll('img[data-src]');
         nextImages.forEach(img => {
           if (!img.classList.contains('loaded') && !img.classList.contains('loading')) {
@@ -326,13 +284,13 @@ const sectionObserver = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  rootMargin: '200px' // Começar a carregar 200px antes
+  rootMargin: '200px' // Comeï¿½ar a carregar 200px antes
 });
 
-sections.forEach(section => sectionObserver.observe(section));
+preloadSections.forEach(section => sectionObserver.observe(section));
 
 /* ========================================
-   9. INICIALIZAÇÃO
+   9. INICIALIZAï¿½ï¿½O
    ======================================== */
 
 console.log('Lazy loading inicializado:', {
@@ -342,7 +300,7 @@ console.log('Lazy loading inicializado:', {
   observerSupport: 'IntersectionObserver' in window
 });
 
-// Export para uso em outros scripts (se necessário)
+// Export para uso em outros scripts (se necessï¿½rio)
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     loadImage,
