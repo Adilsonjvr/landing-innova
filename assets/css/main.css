@@ -181,7 +181,7 @@ select {
 }
 
 [data-aos].aos-init {
-  opacity: 0;
+  opacity: 1;
 }
 
 [data-aos].aos-animate {
@@ -473,7 +473,7 @@ select {
   background: var(--accent-gold);
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.2;
+  opacity: 0.5;
   z-index: -1;
 }
 
@@ -1929,13 +1929,13 @@ select {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.3;
+  opacity: 1;
   transition: var(--transition-slow);
 }
 
 .curso-bento--featured:hover .curso-bento__background img {
   transform: scale(1.05);
-  opacity: 0.4;
+  opacity: 1;
 }
 
 .curso-bento__content {
