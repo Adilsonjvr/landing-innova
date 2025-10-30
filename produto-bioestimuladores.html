@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toxina Botulínica Premium | INNOVA</title>
+    <meta name="description" content="Toxina Botulínica de alta pureza para tratamentos estéticos faciais. Resultados naturais e duradouros.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/produto.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <span class="logo-text">INNOVA</span>
+            </a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#inicio" class="nav__link">Início</a></li>
+                    <li class="nav__item"><a href="index.html#produtos" class="nav__link active-link">Produtos</a></li>
+                    <li class="nav__item"><a href="index.html#formacoes" class="nav__link">Formações</a></li>
+                    <li class="nav__item"><a href="index.html#contacto" class="nav__link">Contacto</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close"><i class="nav__close-icon"></i></div>
+            </div>
+            <a href="index.html#contacto" class="btn btn--primary nav__cta">Solicitar Orçamento</a>
+            <div class="nav__toggle" id="nav-toggle">
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-produto">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Início</a>
+                <span>/</span>
+                <a href="index.html#produtos">Produtos</a>
+                <span>/</span>
+                <span>Toxina Botulínica</span>
+            </div>
+        </div>
+
+        <!-- Produto Hero -->
+        <section class="produto-hero section">
+            <div class="container">
+                <div class="produto-hero__grid">
+                    <div class="produto-hero__gallery">
+                        <div class="produto-hero__main-image">
+                            <img src="assets/images/produto-botox.jpg" alt="Toxina Botulínica INNOVA" id="mainImage">
+                            <span class="produto-hero__badge">Premium</span>
+                        </div>
+                        <div class="produto-hero__thumbnails">
+                            <img src="assets/images/produto-botox.jpg" alt="Visão 1" class="thumbnail active">
+                            <img src="assets/images/hero-aesthetic.jpg" alt="Visão 2" class="thumbnail">
+                            <img src="assets/images/processo-consulta.jpg" alt="Visão 3" class="thumbnail">
+                        </div>
+                    </div>
+
+                    <div class="produto-hero__info">
+                        <h1 class="produto-hero__title">Toxina Botulínica Premium</h1>
+                        <div class="produto-hero__rating">
+                            <div class="rating-stars">
+                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            </div>
+                            <span class="rating-count">(127 avaliações)</span>
+                        </div>
+
+                        <p class="produto-hero__description">
+                            Toxina botulínica tipo A de altíssima pureza para tratamentos estéticos faciais.
+                            Fórmula exclusiva que proporciona resultados naturais, seguros e duradouros.
+                        </p>
+
+                        <div class="produto-hero__features">
+                            <div class="feature-tag">
+                                <i class="devicon-chrome-plain colored"></i>
+                                <span>Certificação Internacional</span>
+                            </div>
+                            <div class="feature-tag">
+                                <i class="devicon-denojs-original colored"></i>
+                                <span>Alta Pureza</span>
+                            </div>
+                            <div class="feature-tag">
+                                <i class="devicon-docker-plain colored"></i>
+                                <span>Resultados 3-6 meses</span>
+                            </div>
+                        </div>
+
+                        <div class="produto-hero__price">
+                            <span class="price-label">Consultar Preço</span>
+                            <p class="price-note">Preços sob consulta para profissionais certificados</p>
+                        </div>
+
+                        <div class="produto-hero__actions">
+                            <button class="btn btn--primary btn--large" onclick="openBuyModal()">
+                                <i class="devicon-gitlab-plain"></i>
+                                Solicitar Orçamento
+                            </button>
+                            <button class="btn btn--outline btn--large" onclick="addToWishlist()">
+                                <i class="devicon-github-original"></i>
+                                Lista de Interesse
+                            </button>
+                        </div>
+
+                        <div class="produto-hero__meta">
+                            <div class="meta-item">
+                                <i class="devicon-nodejs-plain colored"></i>
+                                <div>
+                                    <strong>Disponibilidade</strong>
+                                    <span>Em Stock</span>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <i class="devicon-react-original colored"></i>
+                                <div>
+                                    <strong>Entrega</strong>
+                                    <span>24-48h Portugal Continental</span>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <i class="devicon-vuejs-plain colored"></i>
+                                <div>
+                                    <strong>SKU</strong>
+                                    <span>INNOVA-BTX-100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Produto Details Tabs -->
+        <section class="produto-details section">
+            <div class="container">
+                <div class="tabs">
+                    <div class="tabs__nav">
+                        <button class="tabs__btn active" data-tab="especificacoes">Especificações</button>
+                        <button class="tabs__btn" data-tab="indicacoes">Indicações</button>
+                        <button class="tabs__btn" data-tab="aplicacao">Aplicação</button>
+                        <button class="tabs__btn" data-tab="certificacoes">Certificações</button>
+                    </div>
+
+                    <div class="tabs__content">
+                        <div class="tabs__panel active" id="especificacoes">
+                            <h2>Especificações Técnicas</h2>
+                            <div class="specs-grid">
+                                <div class="spec-item">
+                                    <strong>Princípio Ativo</strong>
+                                    <span>Toxina Botulínica Tipo A</span>
+                                </div>
+                                <div class="spec-item">
+                                    <strong>Concentração</strong>
+                                    <span>100 unidades por frasco</span>
+                                </div>
+                                <div class="spec-item">
+                                    <strong>Apresentação</strong>
+                                    <span>Frasco-ampola liofilizado</span>
+                                </div>
+                                <div class="spec-item">
+                                    <strong>Pureza</strong>
+                                    <span>>99% (certificado)</span>
+                                </div>
+                                <div class="spec-item">
+                                    <strong>Armazenamento</strong>
+                                    <span>2-8°C (refrigerado)</span>
+                                </div>
+                                <div class="spec-item">
+                                    <strong>Validade</strong>
+                                    <span>36 meses (não reconstituído)</span>
+                                </div>
+                                <div class="spec-item">
+                                    <strong>Reconstituição</strong>
+                                    <span>Soro fisiológico 0,9%</span>
+                                </div>
+                                <div class="spec-item">
+                                    <strong>Uso após reconstituição</strong>
+                                    <span>Até 24 horas</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tabs__panel" id="indicacoes">
+                            <h2>Indicações e Áreas de Tratamento</h2>
+                            <div class="indicacoes-list">
+                                <div class="indicacao-card">
+                                    <i class="devicon-python-plain colored"></i>
+                                    <h3>Linhas de Expressão</h3>
+                                    <p>Tratamento de rugas dinâmicas na testa, glabela e região periocular (pés de galinha)</p>
+                                </div>
+                                <div class="indicacao-card">
+                                    <i class="devicon-javascript-plain colored"></i>
+                                    <h3>Rejuvenescimento Facial</h3>
+                                    <p>Suavização de linhas finas e prevenção de rugas profundas</p>
+                                </div>
+                                <div class="indicacao-card">
+                                    <i class="devicon-typescript-plain colored"></i>
+                                    <h3>Harmonização</h3>
+                                    <span>Lift de sobrancelhas, correção de sorriso gengival, lifting de pescoço</p>
+                                </div>
+                                <div class="indicacao-card">
+                                    <i class="devicon-angularjs-plain colored"></i>
+                                    <h3>Hiperidrose</h3>
+                                    <p>Tratamento de sudorese excessiva axilar, palmar e plantar</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tabs__panel" id="aplicacao">
+                            <h2>Protocolo de Aplicação</h2>
+                            <div class="protocol-steps">
+                                <div class="protocol-step">
+                                    <div class="protocol-step__number">01</div>
+                                    <div class="protocol-step__content">
+                                        <h3>Avaliação e Marcação</h3>
+                                        <p>Análise facial detalhada e marcação dos pontos de aplicação considerando a anatomia muscular do paciente</p>
+                                    </div>
+                                </div>
+                                <div class="protocol-step">
+                                    <div class="protocol-step__number">02</div>
+                                    <div class="protocol-step__content">
+                                        <h3>Reconstituição</h3>
+                                        <p>Diluição com soro fisiológico 0,9% estéril (recomendado: 2,5ml para 100U)</p>
+                                    </div>
+                                </div>
+                                <div class="protocol-step">
+                                    <div class="protocol-step__number">03</div>
+                                    <div class="protocol-step__content">
+                                        <h3>Aplicação</h3>
+                                        <p>Injeção intramuscular com agulha 30G ou 32G, técnica asséptica rigorosa</p>
+                                    </div>
+                                </div>
+                                <div class="protocol-step">
+                                    <div class="protocol-step__number">04</div>
+                                    <div class="protocol-step__content">
+                                        <h3>Pós-Procedimento</h3>
+                                        <p>Orientações ao paciente: evitar deitar por 4h, não massagear área, evitar exercícios físicos intensos por 24h</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tabs__panel" id="certificacoes">
+                            <h2>Certificações e Qualidade</h2>
+                            <div class="certificacoes-grid">
+                                <div class="cert-card">
+                                    <i class="devicon-chrome-plain colored"></i>
+                                    <h3>ISO 13485</h3>
+                                    <p>Certificação internacional para dispositivos médicos</p>
+                                </div>
+                                <div class="cert-card">
+                                    <i class="devicon-apple-original colored"></i>
+                                    <h3>CE Mark</h3>
+                                    <p>Conformidade européia para produtos médicos</p>
+                                </div>
+                                <div class="cert-card">
+                                    <i class="devicon-android-plain colored"></i>
+                                    <h3>ANVISA</h3>
+                                    <p>Registro e aprovação ANVISA para uso em território brasileiro</p>
+                                </div>
+                                <div class="cert-card">
+                                    <i class="devicon-linkedin-plain colored"></i>
+                                    <h3>GMP</h3>
+                                    <p>Boas Práticas de Manufatura certificadas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Produtos Relacionados -->
+        <section class="related-products section">
+            <div class="container">
+                <h2 class="section__title">Produtos <span class="gradient-text">Relacionados</span></h2>
+                <div class="related-products__grid">
+                    <a href="produto-acido-hialuronico.html" class="related-card">
+                        <img src="assets/images/produto-acido.jpg" alt="Ácido Hialurónico">
+                        <h3>Ácido Hialurónico</h3>
+                        <p>Preenchimento dérmico</p>
+                    </a>
+                    <a href="produto-bioestimuladores.html" class="related-card">
+                        <img src="assets/images/produto-bioestimulador.jpg" alt="Bioestimuladores">
+                        <h3>Bioestimuladores</h3>
+                        <p>Estimulação de colágeno</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__column">
+                <a href="index.html" class="footer__logo">
+                    <span class="logo-text logo-text--footer">INNOVA</span>
+                </a>
+                <p class="footer__tagline">Precision. Harmony. Beauty.</p>
+                <p class="footer__text">Produtos estéticos premium para profissionais exigentes.</p>
+            </div>
+            <div class="footer__column">
+                <h4 class="footer__title">Links Rápidos</h4>
+                <ul class="footer__list">
+                    <li><a href="index.html" class="footer__link">Início</a></li>
+                    <li><a href="index.html#produtos" class="footer__link">Produtos</a></li>
+                    <li><a href="index.html#formacoes" class="footer__link">Formações</a></li>
+                    <li><a href="index.html#contacto" class="footer__link">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h4 class="footer__title">Produtos</h4>
+                <ul class="footer__list">
+                    <li><a href="produto-botox.html" class="footer__link">Toxina Botulínica</a></li>
+                    <li><a href="produto-acido-hialuronico.html" class="footer__link">Ácido Hialurónico</a></li>
+                    <li><a href="produto-bioestimuladores.html" class="footer__link">Bioestimuladores</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h4 class="footer__title">Redes Sociais</h4>
+                <div class="footer__social">
+                    <a href="https://instagram.com/innova" class="footer__social-link" aria-label="Instagram INNOVA" target="_blank" rel="noopener noreferrer">
+                        <i class="devicon-facebook-plain"></i>
+                    </a>
+                    <a href="https://facebook.com/innova" class="footer__social-link" aria-label="Facebook INNOVA" target="_blank" rel="noopener noreferrer">
+                        <i class="devicon-twitter-original"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/innova" class="footer__social-link" aria-label="LinkedIn INNOVA" target="_blank" rel="noopener noreferrer">
+                        <i class="devicon-linkedin-plain"></i>
+                    </a>
+                    <a href="https://wa.me/351000000000" class="footer__social-link footer__social-link--whatsapp" aria-label="WhatsApp INNOVA" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.52 3.48A11.9 11.9 0 0012.03.1 11.93 11.93 0 001.5 11.7c0 2.1.55 4.1 1.6 5.86L.2 23.1l5.7-1.5a11.86 11.86 0 005.9 1.5h.02c6.6 0 11.97-5.37 11.97-11.98a11.9 11.9 0 00-3.06-8.62z" fill="currentColor"/>
+                            <path d="M17.1 14.2c-.3-.15-1.8-.9-2.1-1.02-.3-.12-.5-.15-.7.15-.2.3-.8 1.02-.95 1.23-.15.2-.3.22-.6.07-.3-.15-1.3-.48-2.48-1.52-.92-.82-1.54-1.84-1.72-2.14-.18-.3-.02-.46.13-.6.12-.12.3-.3.45-.45.15-.15.2-.25.3-.42.1-.18.04-.33-.02-.48-.07-.15-.7-1.7-.95-2.33-.25-.62-.5-.53-.7-.54l-.6-.01c-.2 0-.52.07-.8.33-.28.26-1.08 1.05-1.08 2.57 0 1.52 1.1 2.98 1.25 3.19.15.2 2.15 3.3 5.21 4.63 3.05 1.34 3.05.9 3.6.84.55-.06 1.8-.73 2.05-1.44.25-.7.25-1.3.18-1.44-.07-.15-.25-.2-.55-.35z" fill="#ffffff"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <div class="container">
+                <p>&copy; 2024 INNOVA. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/produto.js"></script>
+</body>
+</html>
