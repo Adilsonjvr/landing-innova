@@ -5,21 +5,28 @@
 /* Fix header for commerce pages - white background with dark text from start */
 .page-cart .header,
 .page-checkout .header {
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(255, 255, 255, 0.98) !important;
   backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm) !important;
 }
 
 .page-cart .nav__link,
 .page-cart .logo-text,
 .page-checkout .nav__link,
 .page-checkout .logo-text {
-  color: var(--primary-black);
+  color: var(--primary-black) !important;
 }
 
 .page-cart .nav__toggle-line,
 .page-checkout .nav__toggle-line {
-  background: var(--primary-black);
+  background: var(--primary-black) !important;
+}
+
+/* Ensure button stays visible */
+.page-cart .btn--primary,
+.page-checkout .btn--primary {
+  background: var(--gradient-gold);
+  color: var(--primary-black);
 }
 
 .commerce-main {
