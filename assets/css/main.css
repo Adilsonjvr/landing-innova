@@ -461,7 +461,50 @@ select {
   z-index: -1;
 }
 
-/* Achievement Badges - Hero Stats Replacement */
+/* Hero Stats Inline - Simple & Elegant */
+.hero__stats-inline {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  margin-top: var(--spacing-2xl);
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.stat-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat-inline__number {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.stat-inline__label {
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-inline__divider {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--accent-gold), transparent);
+}
+
+/* Legacy Achievement Badges */
 .hero__badges {
   display: flex;
   gap: var(--spacing-lg);
