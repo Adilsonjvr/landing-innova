@@ -2,11 +2,11 @@
    GSAP ANIMATIONS - INNOVA
    ======================================== */
 
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
+if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.defaults({ overwrite: 'auto' });
 
-// Wait for DOM to be ready
-document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
     console.log('🎬 GSAP Animations Initialized');
 
     // ========================================
@@ -19,30 +19,35 @@ document.addEventListener('DOMContentLoaded', () => {
         .from('.hero__eyebrow', {
             opacity: 0,
             y: 30,
-            duration: 0.8
+            duration: 0.8,
+            clearProps: 'opacity, transform'
         })
         .from('.hero__title', {
             opacity: 0,
             y: 50,
             duration: 1,
-            stagger: 0.2
+            stagger: 0.2,
+            clearProps: 'opacity, transform'
         }, '-=0.4')
         .from('.hero__description', {
             opacity: 0,
             y: 30,
-            duration: 0.8
+            duration: 0.8,
+            clearProps: 'opacity, transform'
         }, '-=0.6')
         .from('.hero__cta .btn', {
             opacity: 0,
             y: 30,
             scale: 0.9,
             duration: 0.6,
-            stagger: 0.15
+            stagger: 0.15,
+            clearProps: 'opacity, transform'
         }, '-=0.4')
         .from('.hero__stats-inline', {
             opacity: 0,
             y: 40,
-            duration: 0.8
+            duration: 0.8,
+            clearProps: 'opacity, transform'
         }, '-=0.3');
 
     // Animate individual stats with counter
@@ -55,7 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
         x: -30,
         duration: 0.6,
         stagger: 0.2,
-        ease: 'back.out(1.4)'
+        ease: 'back.out(1.4)',
+        immediateRender: false,
+        clearProps: 'opacity, transform'
     });
 
     // Counter animation for numbers
@@ -90,7 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
         scale: 0.95,
         duration: 0.8,
         stagger: 0.2,
-        ease: 'back.out(1.2)'
+        ease: 'back.out(1.2)',
+        immediateRender: false,
+        clearProps: 'opacity, transform'
     });
 
     // Product card hover effects with GSAP
@@ -149,7 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
         rotation: -5,
         duration: 1,
         stagger: 0.15,
-        ease: 'power3.out'
+        ease: 'power3.out',
+        immediateRender: false,
+        clearProps: 'opacity, transform'
     });
 
     // Continuous floating animation
@@ -176,7 +187,9 @@ document.addEventListener('DOMContentLoaded', () => {
         opacity: 0,
         scale: 0.9,
         duration: 1,
-        ease: 'power3.out'
+        ease: 'power3.out',
+        immediateRender: false,
+        clearProps: 'opacity, transform'
     });
 
     gsap.from('.curso-bento--medium', {
@@ -188,7 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
         x: -50,
         duration: 0.8,
         stagger: 0.2,
-        ease: 'power2.out'
+        ease: 'power2.out',
+        immediateRender: false,
+        clearProps: 'opacity, transform'
     });
 
     gsap.from('.curso-bento--info', {
@@ -199,7 +214,9 @@ document.addEventListener('DOMContentLoaded', () => {
         opacity: 0,
         y: 50,
         duration: 0.8,
-        ease: 'back.out(1.4)'
+        ease: 'back.out(1.4)',
+        immediateRender: false,
+        clearProps: 'opacity, transform'
     });
 
     // ========================================
@@ -220,7 +237,9 @@ document.addEventListener('DOMContentLoaded', () => {
             rotation: -10,
             duration: 0.8,
             delay: index * 0.1,
-            ease: 'back.out(1.7)'
+            ease: 'back.out(1.7)',
+            immediateRender: false,
+            clearProps: 'opacity, transform'
         });
 
         // Number counter
@@ -274,7 +293,9 @@ document.addEventListener('DOMContentLoaded', () => {
             opacity: 0,
             y: 40,
             duration: 1,
-            ease: 'power3.out'
+            ease: 'power3.out',
+            immediateRender: false,
+            clearProps: 'opacity, transform'
         });
 
         // Animate gradient text separately
@@ -289,7 +310,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 scale: 0.8,
                 duration: 1,
                 delay: 0.3,
-                ease: 'back.out(2)'
+                ease: 'back.out(2)',
+                immediateRender: false,
+                clearProps: 'opacity, transform'
             });
         }
     });
@@ -308,7 +331,9 @@ document.addEventListener('DOMContentLoaded', () => {
             opacity: 0,
             scale: 0.95,
             duration: 1,
-            ease: 'power3.out'
+            ease: 'power3.out',
+            immediateRender: false,
+            clearProps: 'opacity, transform'
         });
 
         // Decoration icons rotation
@@ -407,4 +432,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     console.log('✨ All GSAP animations loaded successfully!');
-});
+    });
+
+    window.addEventListener('load', () => {
+        if (window.ScrollTrigger) {
+            ScrollTrigger.refresh();
+        }
+    });
+} else {
+    console.warn('GSAP Animations: GSAP or ScrollTrigger not found. Animations skipped.');
+}

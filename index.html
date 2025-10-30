@@ -909,6 +909,12 @@
             once: true,
             offset: 100
         });
+        document.body.classList.add('aos-ready');
+        window.addEventListener('load', () => {
+            if (window.AOS) {
+                AOS.refresh();
+            }
+        });
     </script>
 </body>
 </html>

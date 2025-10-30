@@ -176,17 +176,16 @@ select {
 /* AOS fallback visibility */
 [data-aos] {
   opacity: 1;
-  transform: none;
-  transition: transform 0.6s ease, opacity 0.6s ease;
+  transition: opacity 0.6s ease;
 }
 
-[data-aos].aos-init {
-  opacity: 1;
+body.aos-ready [data-aos]:not(.aos-animate) {
+  opacity: 0;
 }
 
-[data-aos].aos-animate {
+[data-aos].aos-animate,
+body.aos-ready [data-aos].aos-animate {
   opacity: 1;
-  transform: none;
 }
 
 /* Skip to Content (Acessibilidade) */
