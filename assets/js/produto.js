@@ -41,15 +41,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Buy Modal
 function openBuyModal() {
-    alert('Funcionalidade de compra será implementada em breve!\n\nPor favor, entre em contacto através do formulário para solicitar orçamento.');
-    // TODO: Implementar modal de compra com quantidade
-    window.location.href = 'index.html#contacto';
+    window.location.href = 'checkout.html';
 }
 
 // Wishlist
 function addToWishlist() {
-    alert('Produto adicionado à lista de interesse!\n\nEntraremos em contacto em breve.');
-    // TODO: Implementar sistema de wishlist
+    window.location.href = 'carrinho.html';
 }
 
 // Smooth scroll for breadcrumb links
@@ -65,15 +62,4 @@ document.querySelectorAll('.breadcrumb a').forEach(link => {
     });
 });
 
-// Add to cart animation (placeholder)
-const buyButton = document.querySelector('.produto-hero__actions .btn--primary');
-if (buyButton) {
-    buyButton.addEventListener('click', function() {
-        this.innerHTML = '<i class="devicon-checkmark-plain"></i> Solicitado!';
-        this.style.background = '#10b981';
-        setTimeout(() => {
-            this.innerHTML = '<i class="devicon-gitlab-plain"></i> Solicitar Orçamento';
-            this.style.background = '';
-        }, 2000);
-    });
-}
+// Add animation placeholder removed in favor of dedicated pages
