@@ -3292,3 +3292,210 @@ select {
     cursor: pointer !important;
   }
 }
+
+/* ========================================
+   TOP BAR WITH SOCIAL ICONS
+   ======================================== */
+
+.topbar {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.98) 100%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  padding: 0.5rem 0;
+  font-size: 0.813rem;
+}
+
+.topbar__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.topbar__info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.topbar__text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.813rem;
+}
+
+.topbar__text svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.topbar__social {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.topbar__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.topbar__social-link:hover {
+  background: var(--accent-gold);
+  color: var(--primary-black);
+  transform: translateY(-2px);
+}
+
+.topbar__social-link--whatsapp:hover {
+  background: #25D366;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .topbar {
+    padding: 0.625rem 0;
+  }
+  
+  .topbar__content {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .topbar__info {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .topbar__text {
+    font-size: 0.75rem;
+  }
+  
+  .topbar__text svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .topbar__info {
+    display: none;
+  }
+  
+  .topbar__content {
+    justify-content: center;
+  }
+}
+
+/* ========================================
+   SVG ICON SIZE FIXES
+   ======================================== */
+
+/* Product Card Icons - Medium size */
+.produto-card__icon svg {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+/* Benefit Card Icons - Medium size */
+.beneficio-card__icon svg {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+/* Curso Bento Detail Icons - Small */
+.curso-bento__detail svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Curso Bento Overlay Icons - Large */
+.curso-bento__overlay svg {
+  width: 64px !important;
+  height: 64px !important;
+}
+
+/* Curso Bento Info Icon - Large */
+.curso-bento__info-icon {
+  width: 72px !important;
+  height: 72px !important;
+}
+
+/* CTA Decoration Icons - Medium */
+.cta-final__decoration svg {
+  width: 48px !important;
+  height: 48px !important;
+  opacity: 0.15;
+}
+
+/* Footer Social Icons - Already set at 24px, keep it */
+.footer__social-link svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Modal Close Icon */
+.modal__close svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Button Icons - Small */
+.btn svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Form Icons in Modal */
+.modal__form svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+  .produto-card__icon svg {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .beneficio-card__icon svg {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .curso-bento__overlay svg {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  
+  .curso-bento__info-icon {
+    width: 56px !important;
+    height: 56px !important;
+  }
+  
+  .cta-final__decoration svg {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .produto-card__icon svg {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  
+  .beneficio-card__icon svg {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
