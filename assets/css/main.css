@@ -1209,26 +1209,26 @@ body.aos-ready [data-aos].aos-animate {
   margin-top: var(--spacing-md);
 }
 
-/* Google Maps */
-.contacto__map {
-  margin-top: var(--spacing-3xl);
+/* Google Maps Compact (inside address section) */
+.contacto__map-compact {
+  margin-top: var(--spacing-lg);
   width: 100%;
-  max-width: 100%;
+  max-width: 400px;
   overflow: hidden;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
 }
 
-.contacto__map iframe {
+.contacto__map-compact iframe {
   width: 100%;
-  height: 450px;
+  height: 250px;
   border: 0;
-  border-radius: 16px;
-  box-shadow: var(--shadow-lg);
-  transition: var(--transition-smooth);
+  border-radius: 12px;
+  display: block;
 }
 
-.contacto__map iframe:hover {
-  box-shadow: var(--shadow-xl);
-  transform: translateY(-2px);
+.contacto__info-item--map {
+  grid-column: 1 / -1;
 }
 
 /* ========================================

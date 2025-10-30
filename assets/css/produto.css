@@ -2,6 +2,23 @@
    PRODUTO PAGE STYLES
    ======================================== */
 
+/* Fix header for product pages - white background with dark text */
+.main-produto ~ .header,
+body:has(.main-produto) .header {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+}
+
+body:has(.main-produto) .nav__link,
+body:has(.main-produto) .logo-text {
+  color: var(--primary-black);
+}
+
+body:has(.main-produto) .nav__toggle-line {
+  background: var(--primary-black);
+}
+
 .main-produto {
   padding-top: 80px;
 }
@@ -370,25 +387,39 @@
 .specs-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
 }
 
 .spec-item {
   display: flex;
-  justify-content: space-between;
-  padding: var(--spacing-md);
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-lg);
   background: var(--background-light);
   border-radius: 12px;
+  border-left: 3px solid var(--accent-gold);
+  transition: var(--transition-fast);
+}
+
+.spec-item:hover {
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
 }
 
 .spec-item strong {
   color: var(--gray-700);
   font-weight: var(--font-semibold);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .spec-item span {
   color: var(--primary-black);
   font-weight: var(--font-medium);
+  font-size: var(--text-lg);
 }
 
 /* Indicações */

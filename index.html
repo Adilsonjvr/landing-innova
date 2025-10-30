@@ -632,9 +632,23 @@
                 </div>
                 <div class="contacto__wrapper">
                     <div class="contacto__info" data-aos="fade-right">
-                        <div class="contacto__info-item">
+                        <div class="contacto__info-item contacto__info-item--map">
                             <h3 class="contacto__info-title">Morada</h3>
                             <p class="contacto__info-text">INNOVA Medicina Estética<br>Tv. Urtigueira 260 F<br>4410-235 Canelas<br>Porto, Portugal</p>
+
+                            <!-- Google Maps (compact) -->
+                            <div class="contacto__map-compact">
+                                <iframe
+                                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Tv.+Urtigueira+260+F,+4410-235+Canelas,+Porto,+Portugal&zoom=15"
+                                    width="100%"
+                                    height="250"
+                                    style="border:0; border-radius: 12px;"
+                                    allowfullscreen=""
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Localização INNOVA Medicina Estética">
+                                </iframe>
+                            </div>
                         </div>
                         <div class="contacto__info-item">
                             <h3 class="contacto__info-title">Email</h3>
@@ -693,20 +707,6 @@
                             <button type="submit" class="btn btn--primary btn--large form__submit">Enviar Mensagem</button>
                         </form>
                     </div>
-                </div>
-
-                <!-- Google Maps -->
-                <div class="contacto__map" data-aos="fade-up" data-aos-delay="200">
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Tv.+Urtigueira+260+F,+4410-235+Canelas,+Porto,+Portugal&zoom=15"
-                        width="100%"
-                        height="450"
-                        style="border:0; border-radius: 16px; box-shadow: var(--shadow-lg);"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Localização INNOVA Medicina Estética - Tv. Urtigueira 260 F, Canelas, Porto">
-                    </iframe>
                 </div>
             </div>
         </section>
@@ -857,10 +857,11 @@
     <script src="assets/js/gsap-animations.js"></script>
     <script>
         AOS.init({
-            duration: 800,
-            easing: 'ease-out-cubic',
+            duration: 400,
+            easing: 'ease',
             once: true,
-            offset: 100
+            offset: 50,
+            disable: 'mobile'
         });
         document.body.classList.add('aos-ready');
         window.addEventListener('load', () => {
