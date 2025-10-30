@@ -827,10 +827,84 @@
         </div>
     </footer>
 
+    <!-- Purchase Modal -->
+    <div class="modal" id="purchaseModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__container">
+            <button class="modal__close" aria-label="Fechar modal">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+
+            <div class="modal__content">
+                <div class="modal__header">
+                    <h2 class="modal__title">Solicitar Orçamento</h2>
+                    <p class="modal__subtitle">Preencha o formulário e entraremos em contacto em menos de 24 horas</p>
+                </div>
+
+                <form class="modal__form" id="purchaseForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nome" class="form-label">Nome Completo *</label>
+                            <input type="text" id="nome" name="nome" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefone" class="form-label">Telefone *</label>
+                            <input type="tel" id="telefone" name="telefone" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="clinica" class="form-label">Clínica/Consultório</label>
+                            <input type="text" id="clinica" name="clinica" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="produto" class="form-label">Produto de Interesse *</label>
+                        <select id="produto" name="produto" class="form-select" required>
+                            <option value="">Selecione um produto</option>
+                            <option value="botox">Toxina Botulínica</option>
+                            <option value="acido">Ácido Hialurónico</option>
+                            <option value="bio">Bioestimuladores</option>
+                            <option value="varios">Vários Produtos</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantidade" class="form-label">Quantidade Estimada</label>
+                        <input type="number" id="quantidade" name="quantidade" class="form-input" min="1" placeholder="Unidades">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem" class="form-label">Mensagem Adicional</label>
+                        <textarea id="mensagem" name="mensagem" class="form-textarea" rows="4" placeholder="Informações adicionais sobre sua solicitação..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn--primary btn--large">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            Enviar Solicitação
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/lazy-load.js"></script>
+    <script src="assets/js/modal.js"></script>
     <script>
         AOS.init({
             duration: 800,
