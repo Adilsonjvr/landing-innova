@@ -653,7 +653,7 @@ body.aos-ready [data-aos].aos-animate {
 }
 
 .produto-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
 }
 
@@ -663,7 +663,7 @@ body.aos-ready [data-aos].aos-animate {
 }
 
 .produto-card--featured:hover {
-  transform: translateY(-12px) scale(1.02);
+  transform: translateY(-6px);
 }
 
 .produto-card__image {
@@ -687,20 +687,6 @@ body.aos-ready [data-aos].aos-animate {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   z-index: 1;
-}
-
-.produto-card__icon {
-  font-size: 64px;
-  margin-bottom: var(--spacing-lg);
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: var(--transition-smooth);
-}
-
-.produto-card:hover .produto-card__icon {
-  transform: scale(1.1) rotate(5deg);
 }
 
 .produto-card__title {
@@ -761,8 +747,11 @@ body.aos-ready [data-aos].aos-animate {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../images/beneficios-bg.jpg') center/cover no-repeat;
-  opacity: 0.1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.18) 0%, transparent 55%),
+    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 60%),
+    linear-gradient(160deg, rgba(15, 15, 15, 0.92) 0%, rgba(8, 8, 8, 0.85) 100%);
+  opacity: 0.95;
   z-index: 0;
 }
 
@@ -784,8 +773,8 @@ body.aos-ready [data-aos].aos-animate {
 }
 
 .beneficio-card:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .beneficio-card__icon {
@@ -1978,22 +1967,22 @@ body.aos-ready [data-aos].aos-animate {
 
 .curso-bento__details {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   margin-bottom: var(--spacing-xl);
   flex-wrap: wrap;
 }
 
 .curso-bento__detail {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
-  color: var(--gray-300);
-}
-
-.curso-bento__detail i {
-  font-size: 24px;
+  color: var(--secondary-white);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 /* Medium Cards - 5 columns, 1 row each */
@@ -2009,7 +1998,7 @@ body.aos-ready [data-aos].aos-animate {
 }
 
 .curso-bento--medium:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-xl);
 }
 
@@ -2033,15 +2022,8 @@ body.aos-ready [data-aos].aos-animate {
 .curso-bento__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.curso-bento__overlay i {
-  font-size: 72px;
-  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.4));
+  background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 65%);
+  pointer-events: none;
 }
 
 .curso-bento__info {
@@ -2075,17 +2057,10 @@ body.aos-ready [data-aos].aos-animate {
 }
 
 .curso-bento__meta span {
-  display: flex;
-  align-items: center;
-  gap: 0.375rem;
+  display: inline-block;
   font-size: var(--text-sm);
   color: var(--gray-600);
   font-weight: var(--font-medium);
-}
-
-.curso-bento__meta i {
-  font-size: 16px;
-  color: var(--accent-gold);
 }
 
 /* Info Card - Takes remaining space */
@@ -2121,17 +2096,6 @@ body.aos-ready [data-aos].aos-animate {
   gap: var(--spacing-3xl);
   width: 100%;
   max-width: 1000px;
-}
-
-.curso-bento__info-icon {
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-}
-
-.curso-bento__info-icon svg {
-  width: 100%;
-  height: 100%;
 }
 
 .curso-bento__info-title {
@@ -2871,11 +2835,6 @@ body.aos-ready [data-aos].aos-animate {
     text-align: center;
   }
 
-  .curso-bento__info-icon {
-    width: 80px;
-    height: 80px;
-  }
-
   .curso-bento__info-stats {
     justify-content: center;
   }
@@ -2905,16 +2864,6 @@ body.aos-ready [data-aos].aos-animate {
     padding: var(--spacing-xl);
   }
 
-  .produto-card__icon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .produto-card__icon svg {
-    width: 32px;
-    height: 32px;
-  }
-
   .produto-card__title {
     font-size: var(--text-xl);
   }
@@ -2941,11 +2890,6 @@ body.aos-ready [data-aos].aos-animate {
   /* Curso bento - improve info card */
   .curso-bento--info {
     padding: var(--spacing-xl);
-  }
-
-  .curso-bento__info-icon {
-    width: 64px;
-    height: 64px;
   }
 
   .curso-bento__info-title {
@@ -3312,34 +3256,10 @@ body.aos-ready [data-aos].aos-animate {
    SVG ICON SIZE FIXES
    ======================================== */
 
-/* Product Card Icons - Medium size */
-.produto-card__icon svg {
-  width: 48px !important;
-  height: 48px !important;
-}
-
 /* Benefit Card Icons - Medium size */
 .beneficio-card__icon svg {
   width: 48px !important;
   height: 48px !important;
-}
-
-/* Curso Bento Detail Icons - Small */
-.curso-bento__detail svg {
-  width: 20px !important;
-  height: 20px !important;
-}
-
-/* Curso Bento Overlay Icons - Large */
-.curso-bento__overlay svg {
-  width: 64px !important;
-  height: 64px !important;
-}
-
-/* Curso Bento Info Icon - Large */
-.curso-bento__info-icon {
-  width: 72px !important;
-  height: 72px !important;
 }
 
 /* CTA Decoration Icons - Medium */
@@ -3375,24 +3295,9 @@ body.aos-ready [data-aos].aos-animate {
 
 /* Mobile Adjustments */
 @media screen and (max-width: 768px) {
-  .produto-card__icon svg {
-    width: 40px !important;
-    height: 40px !important;
-  }
-  
   .beneficio-card__icon svg {
     width: 40px !important;
     height: 40px !important;
-  }
-  
-  .curso-bento__overlay svg {
-    width: 48px !important;
-    height: 48px !important;
-  }
-  
-  .curso-bento__info-icon {
-    width: 56px !important;
-    height: 56px !important;
   }
   
   .cta-final__decoration svg {
@@ -3402,11 +3307,6 @@ body.aos-ready [data-aos].aos-animate {
 }
 
 @media screen and (max-width: 480px) {
-  .produto-card__icon svg {
-    width: 36px !important;
-    height: 36px !important;
-  }
-  
   .beneficio-card__icon svg {
     width: 36px !important;
     height: 36px !important;

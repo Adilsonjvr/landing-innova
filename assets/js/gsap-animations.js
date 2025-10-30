@@ -93,11 +93,10 @@ if (window.gsap && window.ScrollTrigger) {
             start: 'top 75%',
         },
         opacity: 0,
-        y: 60,
-        scale: 0.95,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'back.out(1.2)',
+        y: 30,
+        duration: 0.5,
+        stagger: 0.12,
+        ease: 'power2.out',
         immediateRender: false,
         clearProps: 'opacity, transform'
     });
@@ -105,42 +104,22 @@ if (window.gsap && window.ScrollTrigger) {
     // Product card hover effects with GSAP
     const productCards = document.querySelectorAll('.produto-card');
     productCards.forEach(card => {
-        const icon = card.querySelector('.produto-card__icon');
-
         card.addEventListener('mouseenter', () => {
             gsap.to(card, {
-                y: -10,
-                scale: 1.02,
-                duration: 0.4,
+                y: -4,
+                scale: 1.01,
+                duration: 0.3,
                 ease: 'power2.out'
             });
-
-            if (icon) {
-                gsap.to(icon, {
-                    rotation: 360,
-                    scale: 1.1,
-                    duration: 0.6,
-                    ease: 'back.out(2)'
-                });
-            }
         });
 
         card.addEventListener('mouseleave', () => {
             gsap.to(card, {
                 y: 0,
                 scale: 1,
-                duration: 0.4,
+                duration: 0.3,
                 ease: 'power2.out'
             });
-
-            if (icon) {
-                gsap.to(icon, {
-                    rotation: 0,
-                    scale: 1,
-                    duration: 0.4,
-                    ease: 'power2.out'
-                });
-            }
         });
     });
 
@@ -154,25 +133,12 @@ if (window.gsap && window.ScrollTrigger) {
             start: 'top 70%',
         },
         opacity: 0,
-        y: 80,
-        rotation: -5,
-        duration: 1,
-        stagger: 0.15,
-        ease: 'power3.out',
+        y: 25,
+        duration: 0.6,
+        stagger: 0.12,
+        ease: 'power2.out',
         immediateRender: false,
         clearProps: 'opacity, transform'
-    });
-
-    // Continuous floating animation
-    document.querySelectorAll('.beneficio-card').forEach((card, index) => {
-        gsap.to(card, {
-            y: -15,
-            duration: 2 + (index * 0.3),
-            repeat: -1,
-            yoyo: true,
-            ease: 'sine.inOut',
-            delay: index * 0.2
-        });
     });
 
     // ========================================
@@ -185,9 +151,9 @@ if (window.gsap && window.ScrollTrigger) {
             start: 'top 70%',
         },
         opacity: 0,
-        scale: 0.9,
-        duration: 1,
-        ease: 'power3.out',
+        scale: 0.97,
+        duration: 0.7,
+        ease: 'power2.out',
         immediateRender: false,
         clearProps: 'opacity, transform'
     });
@@ -198,9 +164,9 @@ if (window.gsap && window.ScrollTrigger) {
             start: 'top 65%',
         },
         opacity: 0,
-        x: -50,
-        duration: 0.8,
-        stagger: 0.2,
+        y: 35,
+        duration: 0.6,
+        stagger: 0.16,
         ease: 'power2.out',
         immediateRender: false,
         clearProps: 'opacity, transform'
@@ -212,9 +178,9 @@ if (window.gsap && window.ScrollTrigger) {
             start: 'top 75%',
         },
         opacity: 0,
-        y: 50,
-        duration: 0.8,
-        ease: 'back.out(1.4)',
+        y: 35,
+        duration: 0.6,
+        ease: 'power2.out',
         immediateRender: false,
         clearProps: 'opacity, transform'
     });
@@ -233,11 +199,10 @@ if (window.gsap && window.ScrollTrigger) {
                 start: 'top 80%',
             },
             opacity: 0,
-            y: 60,
-            rotation: -10,
-            duration: 0.8,
+            y: 30,
+            duration: 0.6,
             delay: index * 0.1,
-            ease: 'back.out(1.7)',
+            ease: 'power2.out',
             immediateRender: false,
             clearProps: 'opacity, transform'
         });
@@ -291,9 +256,9 @@ if (window.gsap && window.ScrollTrigger) {
                 start: 'top 85%',
             },
             opacity: 0,
-            y: 40,
-            duration: 1,
-            ease: 'power3.out',
+            y: 25,
+            duration: 0.6,
+            ease: 'power2.out',
             immediateRender: false,
             clearProps: 'opacity, transform'
         });
@@ -307,10 +272,10 @@ if (window.gsap && window.ScrollTrigger) {
                     start: 'top 85%',
                 },
                 opacity: 0,
-                scale: 0.8,
-                duration: 1,
-                delay: 0.3,
-                ease: 'back.out(2)',
+                scale: 0.9,
+                duration: 0.6,
+                delay: 0.2,
+                ease: 'power2.out',
                 immediateRender: false,
                 clearProps: 'opacity, transform'
             });
@@ -329,9 +294,9 @@ if (window.gsap && window.ScrollTrigger) {
                 start: 'top 70%',
             },
             opacity: 0,
-            scale: 0.95,
-            duration: 1,
-            ease: 'power3.out',
+            scale: 0.98,
+            duration: 0.6,
+            ease: 'power2.out',
             immediateRender: false,
             clearProps: 'opacity, transform'
         });
