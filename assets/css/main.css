@@ -695,6 +695,22 @@ select {
 .beneficios {
   background: var(--gradient-dark);
   color: var(--secondary-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.beneficios::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../../images/beneficios-bg.jpg') center/cover no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.beneficios .container {
+  position: relative;
+  z-index: 1;
 }
 
 .beneficios__grid {
@@ -868,6 +884,15 @@ select {
   font-weight: var(--font-bold);
   font-size: var(--text-lg);
   color: var(--primary-black);
+}
+
+.testimonial-card__photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-gold);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .testimonial-card__name {
