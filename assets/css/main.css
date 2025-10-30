@@ -2820,3 +2820,475 @@ select {
   color: var(--gray-600);
   line-height: 1.6;
 }
+
+/* ========================================
+   ENHANCED MOBILE OPTIMIZATION
+   ======================================== */
+
+/* Tablet improvements (1024px and below) */
+@media screen and (max-width: 1024px) {
+  /* Inline stats - stack vertically on tablets */
+  .hero__stats-inline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+  }
+
+  .stat-inline__divider {
+    display: none;
+  }
+
+  .stat-inline {
+    width: 100%;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  }
+
+  .stat-inline:last-child {
+    border-bottom: none;
+  }
+
+  /* Info card horizontal to vertical */
+  .curso-bento__info-content {
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .curso-bento__info-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .curso-bento__info-stats {
+    justify-content: center;
+  }
+}
+
+/* Mobile improvements (768px and below) */
+@media screen and (max-width: 768px) {
+  /* Hero inline stats */
+  .hero__stats-inline {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-md);
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .stat-inline__number {
+    font-size: var(--text-2xl);
+  }
+
+  .stat-inline__label {
+    font-size: var(--text-sm);
+  }
+
+  /* Product cards - improve spacing */
+  .produto-card {
+    padding: var(--spacing-xl);
+  }
+
+  .produto-card__icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .produto-card__icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .produto-card__title {
+    font-size: var(--text-xl);
+  }
+
+  .produto-card__features {
+    grid-template-columns: 1fr;
+  }
+
+  /* Benefit cards - improve glassmorphism on mobile */
+  .beneficio-card {
+    padding: var(--spacing-xl);
+  }
+
+  .beneficio-card__icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .beneficio-card__icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Curso bento - improve info card */
+  .curso-bento--info {
+    padding: var(--spacing-xl);
+  }
+
+  .curso-bento__info-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .curso-bento__info-title {
+    font-size: var(--text-xl);
+  }
+
+  .curso-bento__info-text {
+    font-size: var(--text-sm);
+  }
+
+  .curso-bento__info-stats {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    width: 100%;
+  }
+
+  .curso-bento__info-stats > div {
+    padding: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Metric cards - improve spacing */
+  .metric-card {
+    padding: var(--spacing-xl);
+  }
+
+  .metric-card__header svg {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .metric-card__number {
+    font-size: 2.5rem;
+  }
+
+  .metric-card__label {
+    font-size: var(--text-sm);
+  }
+
+  /* CTA Final - improve text */
+  .cta-final__title {
+    font-size: var(--text-2xl);
+    line-height: 1.3;
+  }
+
+  .cta-final__description {
+    font-size: var(--text-base);
+  }
+
+  .cta-final__decoration {
+    gap: var(--spacing-md);
+  }
+
+  .cta-final__decoration svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Footer social - ensure proper sizing */
+  .footer__social-link {
+    padding: var(--spacing-md);
+  }
+
+  .footer__social-link svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .footer__social-name {
+    font-size: var(--text-sm);
+  }
+}
+
+/* Small mobile (640px and below) */
+@media screen and (max-width: 640px) {
+  /* Hero adjustments */
+  .hero__title {
+    font-size: var(--text-3xl);
+    line-height: 1.2;
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-lg);
+  }
+
+  .hero__description {
+    font-size: var(--text-sm);
+  }
+
+  .hero__cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Stats inline - compact */
+  .stat-inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .stat-inline__number {
+    font-size: var(--text-xl);
+  }
+
+  /* Produto cards - more compact */
+  .produto-card {
+    padding: var(--spacing-lg);
+  }
+
+  .produto-card__title {
+    font-size: var(--text-lg);
+  }
+
+  .produto-card__description {
+    font-size: var(--text-sm);
+  }
+
+  /* Benefit cards - compact */
+  .beneficio-card {
+    padding: var(--spacing-lg);
+  }
+
+  .beneficio-card__title {
+    font-size: var(--text-lg);
+  }
+
+  .beneficio-card__description {
+    font-size: var(--text-sm);
+  }
+
+  /* Bento cards - improve text sizing */
+  .curso-bento__title {
+    font-size: var(--text-2xl);
+    line-height: 1.3;
+  }
+
+  .curso-bento__desc {
+    font-size: var(--text-sm);
+  }
+
+  .curso-bento__name {
+    font-size: var(--text-lg);
+  }
+
+  .curso-bento__meta {
+    font-size: var(--text-xs);
+  }
+
+  .curso-bento__meta svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* Metric cards - more compact */
+  .metric-card {
+    padding: var(--spacing-lg);
+  }
+
+  .metric-card__number {
+    font-size: 2rem;
+  }
+
+  .metric-card__trend {
+    font-size: var(--text-xs);
+  }
+
+  /* Section headers - improve spacing */
+  .section__header {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .section__title {
+    font-size: var(--text-2xl);
+    line-height: 1.3;
+  }
+
+  .section__description {
+    font-size: var(--text-sm);
+  }
+
+  .section__eyebrow {
+    font-size: var(--text-xs);
+  }
+
+  /* Buttons - improve touch targets */
+  .btn {
+    min-height: 48px;
+    font-size: var(--text-base);
+  }
+
+  .btn svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  /* Navigation - improve mobile menu */
+  .nav__menu {
+    width: 85%;
+  }
+
+  .nav__link {
+    font-size: var(--text-lg);
+    padding: var(--spacing-md) 0;
+  }
+
+  /* Contact form - full width inputs */
+  .contacto__form {
+    gap: var(--spacing-md);
+  }
+
+  .contacto__form input,
+  .contacto__form textarea,
+  .contacto__form select {
+    font-size: 16px; /* Prevent iOS zoom on focus */
+  }
+
+  /* Footer - improve spacing */
+  .footer {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .footer__column {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .footer__title {
+    font-size: var(--text-lg);
+  }
+
+  .footer__text,
+  .footer__link {
+    font-size: var(--text-sm);
+  }
+}
+
+/* Extra small mobile (480px and below) */
+@media screen and (max-width: 480px) {
+  /* Container - tighter padding */
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  /* Hero - very compact */
+  .hero {
+    padding: calc(var(--header-height) + var(--spacing-xl)) 0 var(--spacing-2xl);
+  }
+
+  .hero__title {
+    font-size: var(--text-2xl);
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-base);
+  }
+
+  /* Cards - minimum padding */
+  .produto-card,
+  .beneficio-card,
+  .curso-bento {
+    padding: var(--spacing-md);
+  }
+
+  /* Metric cards - stack vertically */
+  .metric-card__header {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+
+  /* Footer social - vertical stack */
+  .footer__social {
+    gap: var(--spacing-sm);
+  }
+
+  /* Modal - full screen on very small devices */
+  .modal {
+    padding: 0;
+  }
+
+  .modal__container {
+    max-width: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .modal__content {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+}
+
+/* Landscape mobile optimization */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .hero {
+    padding: calc(var(--header-height) + var(--spacing-lg)) 0 var(--spacing-lg);
+  }
+
+  .hero__title {
+    font-size: var(--text-3xl);
+  }
+
+  .hero__stats-inline {
+    flex-direction: row;
+    gap: var(--spacing-md);
+  }
+
+  .stat-inline__divider {
+    display: block;
+    height: 30px;
+  }
+
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .modal__container {
+    max-height: 95vh;
+  }
+}
+
+/* Touch improvements for all mobile devices */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch targets */
+  .btn,
+  .nav__link,
+  .footer__link,
+  .footer__social-link {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Remove hover effects on touch devices */
+  .produto-card:hover,
+  .beneficio-card:hover,
+  .curso-bento:hover {
+    transform: none;
+  }
+
+  /* Improve tap feedback */
+  .btn:active,
+  .produto-card:active,
+  .beneficio-card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  /* Remove cursor pointer visual cues */
+  * {
+    cursor: default !important;
+  }
+
+  button,
+  a,
+  input[type="submit"],
+  input[type="button"] {
+    cursor: pointer !important;
+  }
+}
