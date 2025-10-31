@@ -5,28 +5,28 @@
 /* Fix header for commerce pages - align with main header (dark background, light text) */
 .page-cart .header,
 .page-checkout .header {
-  background: rgba(15, 15, 15, 0.95) !important;
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-md) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm) !important;
 }
 
 .page-cart .nav__link,
 .page-cart .logo-text,
 .page-checkout .nav__link,
 .page-checkout .logo-text {
-  color: var(--secondary-white) !important;
+  color: var(--primary-black) !important;
 }
 
 .page-cart .nav__toggle-line,
 .page-checkout .nav__toggle-line {
-  background: var(--secondary-white) !important;
+  background: var(--primary-black) !important;
 }
 
 /* Ensure button stays visible */
 .page-cart .btn--primary,
 .page-checkout .btn--primary {
-  background: var(--gradient-gold);
-  color: var(--primary-black);
+  background: var(--primary-black);
+  color: var(--secondary-white);
 }
 
 .commerce-main {
@@ -43,7 +43,7 @@
 .commerce-hero__eyebrow {
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--accent-gold);
+  color: rgba(0, 0, 0, 0.6);
   font-size: var(--text-xs);
   display: inline-block;
   margin-bottom: var(--spacing-sm);
@@ -97,7 +97,6 @@
 .cart-item__thumb {
   width: 120px;
   height: 120px;
-  object-fit: cover;
   border-radius: 16px;
 }
 
@@ -122,8 +121,8 @@
 .cart-pill {
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  background: rgba(212, 175, 55, 0.12);
-  color: var(--accent-gold-dark);
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--primary-black);
   font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -159,8 +158,8 @@
 }
 
 .quantity-control button:hover {
-  background: var(--accent-gold);
-  color: var(--primary-black);
+  background: var(--primary-black);
+  color: var(--secondary-white);
 }
 
 .quantity-control input {
@@ -207,8 +206,8 @@
   gap: var(--spacing-md);
   padding: var(--spacing-lg);
   border-radius: 16px;
-  background: rgba(212, 175, 55, 0.06);
-  border: 1px solid rgba(212, 175, 55, 0.18);
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .cart__summary,
@@ -217,7 +216,7 @@
   padding: var(--spacing-2xl);
   background: var(--secondary-white);
   box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(212, 175, 55, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   position: sticky;
   top: 120px;
   display: flex;
@@ -326,8 +325,8 @@
 .form-control select:focus,
 .form-control textarea:focus {
   outline: none;
-  border-color: var(--accent-gold);
-  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25);
+  border-color: var(--primary-black);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
 .payment-methods {
@@ -347,7 +346,7 @@
 
 .payment-option:hover,
 .payment-option input:checked + .payment-option__content {
-  border-color: var(--accent-gold);
+  border-color: var(--primary-black);
   box-shadow: var(--shadow-md);
 }
 
@@ -400,12 +399,12 @@
 }
 
 .order-highlight {
-  background: rgba(212, 175, 55, 0.08);
+  background: rgba(0, 0, 0, 0.05);
   padding: var(--spacing-md);
   border-radius: 16px;
-  border: 1px dashed rgba(212, 175, 55, 0.35);
+  border: 1px dashed rgba(0, 0, 0, 0.2);
   font-size: var(--text-sm);
-  color: var(--accent-gold-dark);
+  color: var(--primary-black);
 }
 
 .checkout-success {
@@ -413,10 +412,10 @@
   margin-top: var(--spacing-xl);
   padding: var(--spacing-2xl);
   border-radius: 20px;
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   text-align: center;
-  color: #047857;
+  color: var(--primary-black);
   font-size: var(--text-lg);
   line-height: 1.7;
 }

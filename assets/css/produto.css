@@ -5,18 +5,18 @@
 /* Fix header for product pages - align with main header (dark background, light text) */
 .main-produto ~ .header,
 body:has(.main-produto) .header {
-  background: rgba(15, 15, 15, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm);
 }
 
 body:has(.main-produto) .nav__link,
 body:has(.main-produto) .logo-text {
-  color: var(--secondary-white);
+  color: var(--primary-black);
 }
 
 body:has(.main-produto) .nav__toggle-line {
-  background: var(--secondary-white);
+  background: var(--primary-black);
 }
 
 .main-produto {
@@ -84,8 +84,8 @@ body:has(.main-produto) .nav__toggle-line {
   position: absolute;
   top: var(--spacing-lg);
   right: var(--spacing-lg);
-  background: var(--gradient-gold);
-  color: var(--primary-black);
+  background: var(--primary-black);
+  color: var(--secondary-white);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: var(--text-sm);
@@ -106,16 +106,15 @@ body:has(.main-produto) .nav__toggle-line {
   border: 2px solid transparent;
   transition: var(--transition-fast);
   aspect-ratio: 1;
-  object-fit: cover;
 }
 
 .thumbnail:hover {
-  border-color: var(--accent-gold);
+  border-color: var(--primary-black);
   transform: scale(1.05);
 }
 
 .thumbnail.active {
-  border-color: var(--accent-gold);
+  border-color: var(--primary-black);
 }
 
 .produto-hero__info {
@@ -139,7 +138,7 @@ body:has(.main-produto) .nav__toggle-line {
 }
 
 .rating-stars {
-  color: var(--accent-gold);
+  color: var(--primary-black);
   font-size: var(--text-lg);
   letter-spacing: 0.1em;
 }
@@ -168,8 +167,8 @@ body:has(.main-produto) .nav__toggle-line {
   width: 48px;
   height: 48px;
   border-radius: 999px;
-  background: var(--gradient-gold);
-  color: var(--primary-black);
+  background: var(--primary-black);
+  color: var(--secondary-white);
   box-shadow: var(--shadow-sm);
 }
 
@@ -207,9 +206,9 @@ body:has(.main-produto) .nav__toggle-line {
 }
 
 .icon-chip--outline {
-  background: rgba(212, 175, 55, 0.12);
-  color: var(--accent-gold);
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--primary-black);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   box-shadow: none;
 }
 
@@ -332,12 +331,12 @@ body:has(.main-produto) .nav__toggle-line {
 }
 
 .tabs__btn:hover {
-  background: rgba(212, 175, 55, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   color: var(--primary-black);
 }
 
 .tabs__btn.active {
-  color: var(--accent-gold);
+  color: var(--primary-black);
   background: var(--secondary-white);
 }
 
@@ -348,7 +347,7 @@ body:has(.main-produto) .nav__toggle-line {
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--accent-gold);
+  background: var(--primary-black);
 }
 
 .tabs__content {
@@ -398,7 +397,7 @@ body:has(.main-produto) .nav__toggle-line {
   padding: var(--spacing-lg);
   background: var(--background-light);
   border-radius: 12px;
-  border-left: 3px solid var(--accent-gold);
+  border-left: 3px solid var(--primary-black);
   transition: var(--transition-fast);
 }
 
@@ -440,7 +439,7 @@ body:has(.main-produto) .nav__toggle-line {
 .indicacao-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-color: var(--accent-gold);
+  border-color: var(--primary-black);
 }
 
 .indicacao-card .icon-chip {
@@ -516,7 +515,7 @@ body:has(.main-produto) .nav__toggle-line {
 }
 
 .cert-card:hover {
-  border-color: var(--accent-gold);
+  border-color: var(--primary-black);
   transform: translateY(-4px);
 }
 

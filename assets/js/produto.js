@@ -25,18 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const thumbnails = document.querySelectorAll('.thumbnail');
     const mainImage = document.getElementById('mainImage');
 
-    thumbnails.forEach(thumb => {
-        thumb.addEventListener('click', () => {
-            // Remove active from all
-            thumbnails.forEach(t => t.classList.remove('active'));
-
-            // Add active to clicked
-            thumb.classList.add('active');
-
-            // Change main image
-            mainImage.src = thumb.src;
+    if (mainImage && mainImage.tagName === 'IMG') {
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+                if (thumb instanceof HTMLImageElement) {
+                    mainImage.src = thumb.src;
+                }
+            });
         });
-    });
+    }
 });
 
 // Buy Modal
