@@ -3334,3 +3334,95 @@ body.aos-ready [data-aos].aos-animate {
     height: 36px !important;
   }
 }
+
+/* ========================================
+   Minimal Theme Overrides
+   ======================================== */
+:root {
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 18px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 12px 26px rgba(0, 0, 0, 0.12);
+  --gradient-gold: linear-gradient(135deg, #d4af37, #d4af37);
+}
+
+.logo-text,
+.logo-text--footer {
+  background: none !important;
+  color: var(--secondary-white) !important;
+  -webkit-text-fill-color: var(--secondary-white) !important;
+  text-shadow: none !important;
+}
+
+.logo-text::after {
+  background: currentColor;
+  opacity: 0.25;
+}
+
+.logo-text--footer::after {
+  display: none;
+}
+
+.btn {
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.btn--primary {
+  background: var(--accent-gold);
+  box-shadow: none;
+}
+
+.btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: none;
+  filter: brightness(1.05);
+}
+
+.btn--outline {
+  border-color: rgba(212, 175, 55, 0.6);
+  color: var(--accent-gold);
+}
+
+.btn--outline:hover {
+  background: var(--accent-gold);
+  color: var(--primary-black);
+}
+
+.hero__decoration {
+  display: none;
+}
+
+.hero__stats-inline {
+  border-top: 1px solid rgba(26, 26, 26, 0.08);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+.stat-inline__number {
+  background: none !important;
+  color: var(--accent-gold);
+  -webkit-text-fill-color: var(--accent-gold);
+}
+
+.produto-card,
+.beneficio-card,
+.testimonial-card {
+  box-shadow: none;
+  border: 1px solid rgba(26, 26, 26, 0.08);
+  background: var(--secondary-white);
+}
+
+.produto-card:hover,
+.beneficio-card:hover,
+.testimonial-card:hover {
+  box-shadow: none;
+  transform: translateY(-2px);
+}
+
+.beneficios {
+  background: linear-gradient(135deg, #111111, #1a1a1a);
+}
+
+.beneficios::before {
+  display: none;
+}
