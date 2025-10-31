@@ -299,13 +299,13 @@ body.aos-ready [data-aos].aos-animate {
   top: 0;
   left: 0;
   width: 100%;
-  background: transparent;
+  background: rgba(15, 15, 15, 0.95);
   z-index: 1000;
   transition: var(--transition-smooth);
 }
 
 .header.scroll-header {
-  background: rgba(26, 26, 26, 0.95);
+  background: rgba(10, 10, 10, 0.98);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-md);
 }
@@ -3405,7 +3405,6 @@ body.aos-ready [data-aos].aos-animate {
 }
 
 .produto-card,
-.beneficio-card,
 .testimonial-card {
   box-shadow: none;
   border: 1px solid rgba(26, 26, 26, 0.08);
@@ -3413,10 +3412,28 @@ body.aos-ready [data-aos].aos-animate {
 }
 
 .produto-card:hover,
-.beneficio-card:hover,
 .testimonial-card:hover {
   box-shadow: none;
   transform: translateY(-2px);
+}
+
+.beneficio-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--secondary-white);
+}
+
+.beneficio-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.beneficio-card__title {
+  color: var(--secondary-white);
+}
+
+.beneficio-card__description {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .beneficios {

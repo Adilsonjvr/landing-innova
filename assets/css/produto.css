@@ -2,21 +2,21 @@
    PRODUTO PAGE STYLES
    ======================================== */
 
-/* Fix header for product pages - white background with dark text */
+/* Fix header for product pages - align with main header (dark background, light text) */
 .main-produto ~ .header,
 body:has(.main-produto) .header {
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(15, 15, 15, 0.95);
   backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
 body:has(.main-produto) .nav__link,
 body:has(.main-produto) .logo-text {
-  color: var(--primary-black);
+  color: var(--secondary-white);
 }
 
 body:has(.main-produto) .nav__toggle-line {
-  background: var(--primary-black);
+  background: var(--secondary-white);
 }
 
 .main-produto {
