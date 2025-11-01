@@ -36,7 +36,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
@@ -105,31 +105,44 @@
     <a href="#main-content" class="skip-to-content">Saltar para o conteúdo principal</a>
 
     <header class="header" id="header">
+        <div class="header__notice">
+            <span>Precision care para profissionais</span>
+            <a href="#contacto">Agendar consultoria</a>
+        </div>
         <nav class="nav container">
-            <a href="#inicio" class="nav__logo">
-                <span class="logo-text" aria-hidden="true">INNOVA</span>
-            </a>
+            <a href="#inicio" class="nav__logo" aria-label="Voltar ao topo">INNOVA</a>
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#inicio" class="nav__link active-link">Início</a></li>
-                    <li class="nav__item"><a href="#produtos" class="nav__link">Produtos</a></li>
-                    <li class="nav__item"><a href="#beneficios" class="nav__link">Benefícios</a></li>
-                    <li class="nav__item"><a href="#formacoes" class="nav__link">Formações</a></li>
-                    <li class="nav__item"><a href="#testemunhos" class="nav__link">Testemunhos</a></li>
-                    <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
-                    <li class="nav__item"><a href="carrinho.html" class="nav__link">Carrinho</a></li>
-                </ul>
-                <div class="nav__close" id="nav-close" aria-label="Fechar menu"><i class="nav__close-icon"></i></div>
+            <div class="nav__center">
+                <div class="nav__menu" id="nav-menu" role="navigation" aria-label="Menu principal">
+                    <button type="button" class="nav__close" id="nav-close" aria-label="Fechar menu">
+                        <span class="nav__toggle-line"></span>
+                        <span class="nav__toggle-line"></span>
+                    </button>
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#inicio" class="nav__link active-link">Início</a></li>
+                        <li class="nav__item"><a href="#produtos" class="nav__link">Portfólio</a></li>
+                        <li class="nav__item"><a href="#beneficios" class="nav__link">Diferenciais</a></li>
+                        <li class="nav__item"><a href="#formacoes" class="nav__link">Formações</a></li>
+                        <li class="nav__item"><a href="#testemunhos" class="nav__link">Testemunhos</a></li>
+                        <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+                    </ul>
+                    <div class="nav__menu-cta">
+                        <a href="produtos/index.html" class="nav__link nav__link--subtle">Ver portfólio completo</a>
+                        <a href="#contacto" class="btn btn--primary btn--large">Solicitar Portfólio</a>
+                    </div>
+                </div>
             </div>
 
-            <a href="#contacto" class="btn btn--primary nav__cta">Solicitar Orçamento</a>
-
-            <div class="nav__toggle" id="nav-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
-                <span class="nav__toggle-line"></span>
-                <span class="nav__toggle-line"></span>
-                <span class="nav__toggle-line"></span>
+            <div class="nav__cta">
+                <a href="produtos/index.html" class="nav__link nav__link--subtle">Ver portfólio completo</a>
+                <a href="#contacto" class="btn btn--primary btn--large">Solicitar Portfólio</a>
             </div>
+
+            <button type="button" class="nav__toggle" id="nav-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-menu">
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+            </button>
         </nav>
     </header>
 
@@ -140,345 +153,328 @@
         <section class="hero section" id="inicio">
             <div class="hero__container container">
                 <div class="hero__content" data-aos="fade-up">
-                    <span class="hero__eyebrow">Excelência em Estética</span>
-                    <h1 class="hero__title">Precision.<br>Harmony.<br><span class="gradient-text">Beauty.</span></h1>
-                    <p class="hero__description">Produtos estéticos premium que unem ciência e arte. Transforme a beleza natural dos seus pacientes com a qualidade INNOVA.</p>
+                    <span class="hero__eyebrow">Excelência científica</span>
+                    <h1 class="hero__title">
+                        Ritual de precisão para
+                        <span class="gradient-text">harmonia absoluta</span>
+                    </h1>
+                    <p class="hero__description">
+                        Curadoria completa de injectáveis, fios e tecnologia médica para elevar a sua prática estética com segurança, suporte consultivo e resultados comprovados.
+                    </p>
+                    <ul class="hero__insights">
+                        <li>Portfólio exclusivo com marcas líderes globais</li>
+                        <li>Protocolos desenhados para cada especialista</li>
+                        <li>Formação contínua e acompanhamento clínico</li>
+                    </ul>
                     <div class="hero__cta">
-                        <a href="#produtos" class="btn btn--primary btn--large">Explorar Produtos</a>
-                        <a href="#contacto" class="btn btn--outline btn--large">Falar com Especialista</a>
+                        <a href="#produtos" class="btn btn--primary btn--large">Explorar Linha Signature</a>
+                        <a href="#contacto" class="btn btn--outline btn--large">Agendar consultoria</a>
                     </div>
-                    <div class="hero__stats-inline" data-aos="fade-up">
-                        <div class="stat-inline">
-                            <span class="stat-inline__number" data-target="15">15</span>
-                            <span class="stat-inline__label">Anos de Excelência</span>
-                        </div>
-                        <div class="stat-inline__divider"></div>
-                        <div class="stat-inline">
-                            <span class="stat-inline__number" data-target="5000">5K+</span>
-                            <span class="stat-inline__label">Profissionais</span>
-                        </div>
-                        <div class="stat-inline__divider"></div>
-                        <div class="stat-inline">
-                            <span class="stat-inline__number">ISO</span>
-                            <span class="stat-inline__label">Certificado</span>
-                        </div>
+                    <div class="hero__metrics" data-aos="fade-up" data-aos-delay="150">
+                        <article class="hero-metric">
+                            <span class="hero-metric__number">15+</span>
+                            <span class="hero-metric__label">Anos de precisão</span>
+                        </article>
+                        <article class="hero-metric">
+                            <span class="hero-metric__number">5000</span>
+                            <span class="hero-metric__label">Profissionais parceiros</span>
+                        </article>
+                        <article class="hero-metric">
+                            <span class="hero-metric__number">ISO</span>
+                            <span class="hero-metric__label">Certificação & suporte</span>
+                        </article>
                     </div>
                 </div>
-                <div class="hero__image" data-aos="fade-left">
-                    <div class="media-placeholder media-placeholder--hero" role="img" aria-label="Visual em atualização"></div>
+
+                <div class="hero__image-wrapper" data-aos="fade-left">
+                    <div class="hero__decoration hero__glow"></div>
+                    <picture class="hero__visual">
+                        <source srcset="assets/images/1_COVER.webp" media="(min-width: 1024px)" type="image/webp">
+                        <source srcset="assets/images/20230919141218474.webp" media="(min-width: 640px)" type="image/webp">
+                        <img src="assets/images/1bad93eef1be99761cefb7ed7d258a64.jpg" alt="Profissional aplicando tratamentos INNOVA" width="720" height="900" loading="eager">
+                    </picture>
                 </div>
             </div>
         </section>
 
-        <!-- PRODUTOS -->
-        <section class="produtos section" id="produtos">
+        <!-- SIGNATURE RANGE -->
+        <section class="signature section" id="produtos">
             <div class="container">
-                <div class="section__header" data-aos="fade-up">
-                    <span class="section__eyebrow">Nossa Linha Premium</span>
-                    <h2 class="section__title">Produtos de <span class="gradient-text">Excelência</span></h2>
-                    <p class="section__description">Seleção cuidadosa de produtos que proporcionam resultados extraordinários e duradouros.</p>
-                </div>
-                <div class="produtos__grid">
-                    <article class="produto-card" data-aos="fade-up">
-                        <div class="produto-card__image media-placeholder media-placeholder--wide" role="img" aria-label="Representação Toxina Botulínica"></div>
-                        <h3 class="produto-card__title">Toxina Botulínica</h3>
-                        <p class="produto-card__description">Resultados naturais e precisos para suavização de linhas de expressão. Qualidade farmacêutica premium.</p>
-                        <ul class="produto-card__features">
-                            <li><span class="check-icon">✓</span> Efeito prolongado</li>
-                            <li><span class="check-icon">✓</span> Aplicação precisa</li>
-                            <li><span class="check-icon">✓</span> Resultados naturais</li>
-                            <li><span class="check-icon">✓</span> Segurança comprovada</li>
+                <header class="section__header signature__header" data-aos="fade-up">
+                    <span class="section__eyebrow">Signature Range</span>
+                    <h2 class="section__title">Portfólio <span class="gradient-text">INNOVA</span></h2>
+                    <p class="section__description">
+                        Um ecossistema completo de injectáveis, fios e tecnologia médica para cada etapa do tratamento — selecionado com rigor clínico e suporte consultivo permanente.
+                    </p>
+                </header>
+
+                <div class="signature__grid">
+                    <article class="signature-card signature-card--featured" data-aos="fade-up">
+                        <span class="signature-card__tag">Linha facial</span>
+                        <h3 class="signature-card__title">Ácido Hialurónico</h3>
+                        <p class="signature-card__copy">Rennova®, Reyoungel® e Burgeon® com densidades de 1 ml a 20 ml, reticulação otimizada e durabilidade até 18 meses.</p>
+                        <ul class="signature-card__list">
+                            <li>Fill, Lift, Lift Plus Lido e gamas Tissue-Mimetic</li>
+                            <li>Perfis de coesão/elasticidade personalizados</li>
+                            <li>Indicações faciais e corporais avançadas</li>
                         </ul>
-                        <a href="produto-botox.html" class="produto-card__cta">Ver Detalhes →</a>
+                        <a class="signature-card__cta" href="produtos/acido-hialuronico/index.html">Ver gama →</a>
                     </article>
-                    <article class="produto-card produto-card--featured" data-aos="fade-up">
-                        <span class="produto-card__badge">Mais Popular</span>
-                        <div class="produto-card__image media-placeholder media-placeholder--wide" role="img" aria-label="Representação Ácido Hialurónico"></div>
-                        <h3 class="produto-card__title">Ácido Hialurónico</h3>
-                        <p class="produto-card__description">Preenchimento dérmico de alta densidade. Hidratação profunda e restauração de volume facial.</p>
-                        <ul class="produto-card__features">
-                            <li><span class="check-icon">✓</span> Múltiplas densidades</li>
-                            <li><span class="check-icon">✓</span> Biocompatível</li>
-                            <li><span class="check-icon">✓</span> Efeito volumizador</li>
-                            <li><span class="check-icon">✓</span> Hidratação intensa</li>
+
+                    <article class="signature-card" data-aos="fade-up" data-aos-delay="100">
+                        <span class="signature-card__tag">Regeneração</span>
+                        <h3 class="signature-card__title">Bioestimuladores</h3>
+                        <p class="signature-card__copy">PLLA Rennova® Elleva, CaHA Burgeon® Calhydra e Radiesse®, além do PCL Dexlevo® Gouri para estimulação 3D.</p>
+                        <ul class="signature-card__list">
+                            <li>Protocolos faciais e corporais</li>
+                            <li>Reconstituição acelerada (1h) com água bidestilada</li>
+                            <li>Resultados clínicos até 24 meses</li>
                         </ul>
-                        <a href="produto-acido-hialuronico.html" class="produto-card__cta">Ver Detalhes →</a>
+                        <a class="signature-card__cta" href="produtos/bioestimuladores/index.html">Explorar soluções →</a>
                     </article>
-                    <article class="produto-card" data-aos="fade-up">
-                        <div class="produto-card__image media-placeholder media-placeholder--wide" role="img" aria-label="Representação Bioestimuladores"></div>
-                        <h3 class="produto-card__title">Bioestimuladores</h3>
-                        <p class="produto-card__description">Estimulação natural de colágeno. Rejuvenescimento progressivo e duradouro da pele.</p>
-                        <ul class="produto-card__features">
-                            <li><span class="check-icon">✓</span> Estímulo de colágeno</li>
-                            <li><span class="check-icon">✓</span> Efeito progressivo</li>
-                            <li><span class="check-icon">✓</span> Resultados duradouros</li>
-                            <li><span class="check-icon">✓</span> Rejuvenescimento global</li>
+
+                    <article class="signature-card" data-aos="fade-up" data-aos-delay="150">
+                        <span class="signature-card__tag">Hidratação estrutural</span>
+                        <h3 class="signature-card__title">Skinboosters</h3>
+                        <p class="signature-card__copy">VliftPro® Elastica Hydroboost e toda a linha Profhilo® (2 ml, Body 6 ml, Structura) com tecnologia NAHYCO®.</p>
+                        <ul class="signature-card__list">
+                            <li>Hidratação profunda + efeito lifting</li>
+                            <li>Protocolos corporais para flacidez</li>
+                            <li>Resultados com mínima inflamação</li>
                         </ul>
-                        <a href="produto-bioestimuladores.html" class="produto-card__cta">Ver Detalhes →</a>
+                        <a class="signature-card__cta" href="produtos/skinboosters/index.html">Consultar protocolos →</a>
+                    </article>
+
+                    <article class="signature-card" data-aos="fade-up" data-aos-delay="200">
+                        <span class="signature-card__tag">Suporte tecidual</span>
+                        <h3 class="signature-card__title">Fios PDO & COG</h3>
+                        <p class="signature-card__copy">VliftPro® e Magicalift® em opções mono, screw, cones e cog 6D para lifting e bioestimulação controlada.</p>
+                        <ul class="signature-card__list">
+                            <li>Mapas de aplicação facial e corporal</li>
+                            <li>Cânulas e agulhas calibradas 18G–30G</li>
+                            <li>Kits completos para rinomodelação e eye lift</li>
+                        </ul>
+                        <a class="signature-card__cta" href="produtos/fios/index.html">Plano de fios →</a>
+                    </article>
+
+                    <article class="signature-card" data-aos="fade-up" data-aos-delay="250">
+                        <span class="signature-card__tag">Cocktails clínicos</span>
+                        <h3 class="signature-card__title">Mesoterapia & Enzimas</h3>
+                        <p class="signature-card__copy">Lipolíticos, moduladores de colagénio, PDRN + HA e soluções específicas para contorno ocular, acne e fibrose.</p>
+                        <ul class="signature-card__list">
+                            <li>Volumes 5×10 ml e 5×5 ml com estabilidade</li>
+                            <li>Protocolos combinados com boosters tópicos</li>
+                            <li>Material técnico e follow-up consultivo</li>
+                        </ul>
+                        <a class="signature-card__cta" href="produtos/mesoterapia/index.html">Ver protocolos →</a>
+                    </article>
+
+                    <article class="signature-card" data-aos="fade-up" data-aos-delay="300">
+                        <span class="signature-card__tag">Tecnologia & suporte</span>
+                        <h3 class="signature-card__title">Aparatologia & Kits</h3>
+                        <p class="signature-card__copy">Hilotherm®, centrífugas Hettich®, Auto Microneedle Systems e kits Vacuette® para estruturar o serviço pós-procedimento.</p>
+                        <ul class="signature-card__list">
+                            <li>Equipamentos ISO 13485 e assistência local</li>
+                            <li>Kits treino Rennova® e dermarollers profissionais</li>
+                            <li>Curadoria de agulhas, cânulas e acessórios</li>
+                        </ul>
+                        <a class="signature-card__cta" href="produtos/aparatologia/index.html">Montar estrutura →</a>
+                    </article>
+                </div>
+
+                <div class="signature__footer" data-aos="fade-up" data-aos-delay="200">
+                    <p>Precisa de ajuda para selecionar a combinação ideal? <a href="#contacto">Fale com o nosso concierge clínico</a> e receba um plano customizado.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- INNOVA STANDARD -->
+        <section class="standard section" id="beneficios">
+            <div class="container standard__container">
+                <div class="standard__manifesto" data-aos="fade-right">
+                    <span class="section__eyebrow">Innova Standard</span>
+                    <h2 class="section__title">Precisão clínica, <span class="gradient-text">suporte total</span></h2>
+                    <p class="standard__intro">
+                        Cada referência passa por curadoria técnica, homologação regulatória e um plano de implementação step-by-step — para que o profissional se concentre no paciente e não na logística.
+                    </p>
+                    <ol class="standard__timeline" aria-label="Fluxo de parceria INNOVA">
+                        <li>
+                            <span class="standard__timeline-step">01</span>
+                            <div>
+                                <h3>Curadoria certificada</h3>
+                                <p>Portfólio com ISO 13485, dossiês completos e rastreabilidade de lote desde a origem.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="standard__timeline-step">02</span>
+                            <div>
+                                <h3>Planeamento terapêutico</h3>
+                                <p>Recomendações personalizadas de densidades, combinações e cronogramas adaptados ao perfil da clínica.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="standard__timeline-step">03</span>
+                            <div>
+                                <h3>Formação e onboarding</h3>
+                                <p>Treinos hands-on, materiais clínicos e suporte de aplicação para toda a equipa.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="standard__timeline-step">04</span>
+                            <div>
+                                <h3>Follow-up 360º</h3>
+                                <p>Monitorização de resultados, reposição ágil e atualização contínua de protocolos.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="standard__grid">
+                    <article class="standard-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="standard-card__icon" aria-hidden="true">
+                            <span>ISO</span>
+                        </div>
+                        <h3 class="standard-card__title">Compliance & qualidade</h3>
+                        <p class="standard-card__copy">Dossiês técnicos, etiquetas bilingues, fichas de segurança e suporte para auditorias clínicas.</p>
+                    </article>
+                    <article class="standard-card glass-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="standard-card__icon" aria-hidden="true">
+                            <span>360°</span>
+                        </div>
+                        <h3 class="standard-card__title">Concierge consultivo</h3>
+                        <p class="standard-card__copy">Canal direto com especialistas para dúvidas de técnica, combinações e gestão de intercorrências.</p>
+                    </article>
+                    <article class="standard-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="standard-card__icon" aria-hidden="true">
+                            <span>+</span>
+                        </div>
+                        <h3 class="standard-card__title">Conteúdo educacional</h3>
+                        <p class="standard-card__copy">Biblioteca de protocolos, vídeos demonstrativos e acesso a masterclasses exclusivas.</p>
+                    </article>
+                    <article class="standard-card glass-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="standard-card__icon" aria-hidden="true">
+                            <span>24h</span>
+                        </div>
+                        <h3 class="standard-card__title">Logística inteligente</h3>
+                        <p class="standard-card__copy">Entrega nacional em até 24h úteis, reposição programada e kits prontos para cada procedimento.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- BENEFÍCIOS -->
-        <section class="beneficios section" id="beneficios">
+        <!-- PARTNERSHIP FLOW -->
+        <section class="partnership section" id="processo">
             <div class="container">
-                <div class="section__header" data-aos="fade-up">
-                    <h2 class="section__title section__title--white">Por Que Escolher <span class="gradient-text">INNOVA</span></h2>
-                </div>
-                <div class="beneficios__grid">
-                    <article class="beneficio-card glass-card" data-aos="fade-up">
-                        <div class="beneficio-card__icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="beneficio-card__title">Qualidade Certificada</h3>
-                        <p class="beneficio-card__description">Produtos aprovados e testados segundo normas internacionais de segurança.</p>
-                    </article>
-                    <article class="beneficio-card glass-card" data-aos="fade-up">
-                        <div class="beneficio-card__icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="beneficio-card__title">Suporte Técnico</h3>
-                        <p class="beneficio-card__description">Equipa especializada disponível para consultoria e esclarecimento de dúvidas.</p>
-                    </article>
-                    <article class="beneficio-card glass-card" data-aos="fade-up">
-                        <div class="beneficio-card__icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
-                            </svg>
-                        </div>
-                        <h3 class="beneficio-card__title">Formação Contínua</h3>
-                        <p class="beneficio-card__description">Acesso a workshops e formações sobre técnicas de aplicação avançadas.</p>
-                    </article>
-                    <article class="beneficio-card glass-card" data-aos="fade-up">
-                        <div class="beneficio-card__icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
-                            </svg>
-                        </div>
-                        <h3 class="beneficio-card__title">Entrega Rápida</h3>
-                        <p class="beneficio-card__description">Logística eficiente com entrega em todo território português.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+                <header class="partnership__header" data-aos="fade-up">
+                    <span class="section__eyebrow">Partnership Flow</span>
+                    <h2 class="section__title">Do diagnóstico à fidelização</h2>
+                    <p class="section__description">Acompanhamos cada clínica desde a análise inicial até ao suporte pós-tratamento, com planos personalizados, formação aplicada e logística 24h.</p>
+                </header>
 
-        <!-- PROCESSO -->
-        <section class="processo section" id="processo">
-            <div class="container">
-                <div class="section__header" data-aos="fade-up">
-                    <h2 class="section__title">Como <span class="gradient-text">Funciona</span></h2>
-                </div>
-                <div class="processo__timeline">
-                    <article class="processo-step" data-aos="fade-right">
-                        <div class="processo-step__number">01</div>
-                        <div class="processo-step__icon">
-                            <div class="processo-step__photo media-placeholder media-placeholder--circle" role="img" aria-label="Consulta - Avaliação"></div>
+                <div class="partnership__timeline">
+                    <article class="partnership-step" data-aos="fade-up" data-aos-delay="0">
+                        <span class="partnership-step__index">01</span>
+                        <div class="partnership-step__media">
+                            <picture>
+                                <source srcset="assets/images/eIMG_9941-e1727108021562123-2-e1728038059509.png" type="image/png">
+                                <img src="assets/images/eIMG_9948-e1727108102539123-1-e1728038035547.png" alt="Reunião de diagnóstico com equipa INNOVA" width="320" height="360" loading="lazy">
+                            </picture>
                         </div>
-                        <div class="processo-step__content">
-                            <h3 class="processo-step__title">Consulta</h3>
-                            <p class="processo-step__description">Entre em contacto com nossa equipa para avaliação das suas necessidades.</p>
-                        </div>
-                    </article>
-                    <article class="processo-step" data-aos="fade-right">
-                        <div class="processo-step__number">02</div>
-                        <div class="processo-step__icon">
-                            <div class="processo-step__photo media-placeholder media-placeholder--circle" role="img" aria-label="Seleção - Recomendações"></div>
-                        </div>
-                        <div class="processo-step__content">
-                            <h3 class="processo-step__title">Seleção</h3>
-                            <p class="processo-step__description">Receba recomendações personalizadas de produtos para o seu perfil profissional.</p>
+                        <div class="partnership-step__content">
+                            <h3>Discovery & diagnóstico</h3>
+                            <p>Mapeamos o perfil da clínica, portefólio atual e oportunidades de crescimento com base em evidência científica.</p>
+                            <ul class="partnership-step__list">
+                                <li>Checklist regulatório e documentação necessária</li>
+                                <li>Definição de persona de paciente e ticket médio</li>
+                            </ul>
                         </div>
                     </article>
-                    <article class="processo-step" data-aos="fade-right">
-                        <div class="processo-step__number">03</div>
-                        <div class="processo-step__icon">
-                            <div class="processo-step__photo media-placeholder media-placeholder--circle" role="img" aria-label="Acompanhamento - Suporte"></div>
+
+                    <article class="partnership-step" data-aos="fade-up" data-aos-delay="100">
+                        <span class="partnership-step__index">02</span>
+                        <div class="partnership-step__media">
+                            <picture>
+                                <source srcset="assets/images/rennova_fill1-7ccb564073c9126f2016596453532857-1024-1024.webp" type="image/webp">
+                                <img src="assets/images/rennova_elleva_frascocaixa1-09b1d3b3edd4a6628d16596449976120-1024-1024.webp" alt="Seleção de produtos Rennova e Reyoungel" width="320" height="360" loading="lazy">
+                            </picture>
                         </div>
-                        <div class="processo-step__content">
-                            <h3 class="processo-step__title">Acompanhamento</h3>
-                            <p class="processo-step__description">Suporte contínuo e formação para maximizar os resultados dos seus tratamentos.</p>
+                        <div class="partnership-step__content">
+                            <h3>Curadoria & plano terapêutico</h3>
+                            <p>Escolhemos densidades, bioestimuladores e boosters ideais para cada tratamento, com cronogramas e kits pré-montados.</p>
+                            <ul class="partnership-step__list">
+                                <li>Combinações HA + CaHA + PLLA</li>
+                                <li>Kits para protocolos faciais e corporais</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="partnership-step" data-aos="fade-up" data-aos-delay="150">
+                        <span class="partnership-step__index">03</span>
+                        <div class="partnership-step__media">
+                            <picture>
+                                <source srcset="assets/images/Calhydra.webp" type="image/webp">
+                                <img src="assets/images/Genesis.webp" alt="Sessão prática com bioestimuladores Calhydra" width="320" height="360" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="partnership-step__content">
+                            <h3>Implementação & formação</h3>
+                            <p>Workshops hands-on, guiões clínicos e suporte in loco para garantir segurança e excelência nos resultados.</p>
+                            <ul class="partnership-step__list">
+                                <li>Mentoria com especialistas e acompanhamento de casos</li>
+                                <li>Materiais educativos e marketing clínico</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="partnership-step" data-aos="fade-up" data-aos-delay="200">
+                        <span class="partnership-step__index">04</span>
+                        <div class="partnership-step__media">
+                            <picture>
+                                <source srcset="assets/images/HilothermClinic.webp" type="image/webp">
+                                <img src="assets/images/HilothermHome.webp" alt="Equipamentos Hilotherm para pós-procedimento" width="320" height="360" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="partnership-step__content">
+                            <h3>Follow-up & evolução</h3>
+                            <p>Reposição inteligente, métricas de fidelização e atualizações contínuas para manter a clínica na vanguarda.</p>
+                            <ul class="partnership-step__list">
+                                <li>Logística 24h e planos de stock</li>
+                                <li>Novos lançamentos e protocolos trimestrais</li>
+                            </ul>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- FORMAÇÕES PROFISSIONAIS -->
-        <section class="formacoes section" id="formacoes">
-            <div class="container">
-                <div class="section__header" data-aos="fade-up">
-                    <span class="section__eyebrow">Capacitação Profissional</span>
-                    <h2 class="section__title">Formações e <span class="gradient-text">Cursos</span></h2>
-                    <p class="section__description">Eleve suas competências com nossos programas de formação certificados e reconhecidos internacionalmente.</p>
-                </div>
+        <!-- LUXE ACADEMY -->
+        <section class="academy section" id="formacoes">
+            <div class="container academy__container">
+                <header class="section__header academy__header" data-aos="fade-up">
+                    <span class="section__eyebrow">Luxe Academy</span>
+                    <h2 class="section__title">Formações <span class="gradient-text">hands-on</span> para equipas de alto desempenho</h2>
+                    <p class="section__description">Programas intensivos com mentoring clínico, simulação de casos reais e follow-up individualizado para consolidar habilidades avançadas.</p>
+                </header>
 
-                <!-- Bento Grid Layout -->
-                <div class="cursos-bento">
-                    <!-- Featured Large Card -->
-                    <article class="curso-bento curso-bento--featured" data-aos="fade-up">
-                        <div class="curso-bento__background">
-                            <div class="media-placeholder media-placeholder--hero" role="img" aria-label="Toxina Botulínica Premium"></div>
+                <div class="academy__grid">
+                    <article class="academy-card academy-card--hero" data-aos="fade-up">
+                        <div class="academy-card__media">
+                            <picture>
+                                <source srcset="assets/images/eIMG_9962-e1727108210942123.png" type="image/png">
+                                <img src="assets/images/eIMG_9957-e1727108155272123.png" alt="Formação prática em toxina botulínica" width="520" height="640" loading="lazy">
+                            </picture>
+                            <span class="academy-card__badge">Masterclass imersiva</span>
                         </div>
-                        <div class="curso-bento__content">
-                            <div class="curso-bento__badge">Mais Procurado</div>
-                            <h3 class="curso-bento__title">Toxina Botulínica<br>Premium Experience</h3>
-                            <p class="curso-bento__desc">Domine técnicas avançadas com mentoria exclusiva e prática em casos reais</p>
-                            <div class="curso-bento__details">
-                                <div class="curso-bento__detail"><span>20h Práticas</span>
-                                </div>
-                                <div class="curso-bento__detail"><span>Cert. Internacional</span>
-                                </div>
-                                <div class="curso-bento__detail"><span>6 Vagas</span>
-                                </div>
-                            </div>
-                            <a href="#contacto" class="btn btn--primary btn--large">Garantir Vaga</a>
-                        </div>
-                    </article>
-
-                    <!-- Medium Card 1 -->
-                    <article class="curso-bento curso-bento--medium" data-aos="fade-up">
-                        <div class="curso-bento__image">
-                            <div class="media-placeholder media-placeholder--wide" role="img" aria-label="Ácido Hialurónico Master"></div>
-                            <div class="curso-bento__overlay"></div>
-                        </div>
-                        <div class="curso-bento__info">
-                            <span class="curso-bento__category">Masterclass</span>
-                            <h4 class="curso-bento__name">Ácido Hialurónico & MD Codes</h4>
-                            <div class="curso-bento__meta">
-                                <span>16h
-                                </span>
-                                <span>Avançado
-                                </span>
-                            </div>
-                            <a href="#contacto" class="btn btn--outline btn--small">Saber Mais</a>
-                        </div>
-                    </article>
-
-                    <!-- Medium Card 2 -->
-                    <article class="curso-bento curso-bento--medium" data-aos="fade-up">
-                        <div class="curso-bento__image">
-                            <div class="media-placeholder media-placeholder--wide" role="img" aria-label="Bioestimuladores Expert"></div>
-                            <div class="curso-bento__overlay"></div>
-                        </div>
-                        <div class="curso-bento__info">
-                            <span class="curso-bento__category">Certificação</span>
-                            <h4 class="curso-bento__name">Bioestimuladores Next Level</h4>
-                            <div class="curso-bento__meta">
-                                <span>12h
-                                </span>
-                                <span>Expert
-                                </span>
-                            </div>
-                            <a href="#contacto" class="btn btn--outline btn--small">Saber Mais</a>
-                        </div>
-                    </article>
-
-                    <!-- Info Card -->
-                    <article class="curso-bento curso-bento--info" data-aos="fade-up">
-                        <div class="curso-bento__info-content">
-                            <div style="flex: 1;">
-                                <h4 class="curso-bento__info-title">Suporte Completo Incluso</h4>
-                                <p class="curso-bento__info-text">Acompanhamento pós-formação, material exclusivo e acesso ao grupo VIP de profissionais</p>
-                            </div>
-                            <div class="curso-bento__info-stats">
-                                <div><strong>2000+</strong><span>Formados</span></div>
-                                <div><strong>98%</strong><span>Satisfação</span></div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Stats de Formações -->
-                <div class="formacoes__metrics" data-aos="fade-up">
-                    <div class="metric-card metric-card--gradient-1" data-aos="zoom-in">
-                        <div class="metric-card__header">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 32px; height: 32px;">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
-                            </svg>
-                            <span class="metric-card__trend">+350 este ano</span>
-                        </div>
-                        <div class="metric-card__body">
-                            <span class="metric-card__number" data-target="2000">2000</span>
-                            <span class="metric-card__suffix">+</span>
-                        </div>
-                        <div class="metric-card__footer">
-                            <span class="metric-card__label">Profissionais Certificados</span>
-                            <div class="metric-card__progress">
-                                <div class="metric-card__progress-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="metric-card metric-card--gradient-2" data-aos="zoom-in">
-                        <div class="metric-card__header">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 32px; height: 32px;">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                            </svg>
-                            <span class="metric-card__trend">+12 novos</span>
-                        </div>
-                        <div class="metric-card__body">
-                            <span class="metric-card__number" data-target="50">50</span>
-                            <span class="metric-card__suffix">+</span>
-                        </div>
-                        <div class="metric-card__footer">
-                            <span class="metric-card__label">Cursos Ministrados</span>
-                            <div class="metric-card__progress">
-                                <div class="metric-card__progress-bar" style="width: 92%"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="metric-card metric-card--gradient-3" data-aos="zoom-in">
-                        <div class="metric-card__header">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 32px; height: 32px;">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                            </svg>
-                            <span class="metric-card__trend">Top rated</span>
-                        </div>
-                        <div class="metric-card__body">
-                            <span class="metric-card__number">98</span>
-                            <span class="metric-card__suffix">%</span>
-                        </div>
-                        <div class="metric-card__footer">
-                            <span class="metric-card__label">Índice de Satisfação</span>
-                            <div class="metric-card__progress">
-                                <div class="metric-card__progress-bar" style="width: 98%"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="metric-card metric-card--gradient-4" data-aos="zoom-in">
-                        <div class="metric-card__header">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 32px; height: 32px;">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                            </svg>
-                            <span class="metric-card__trend">Desde 2009</span>
-                        </div>
-                        <div class="metric-card__body">
-                            <span class="metric-card__number" data-target="15">15</span>
-                            <span class="metric-card__suffix">+</span>
-                        </div>
-                        <div class="metric-card__footer">
-                            <span class="metric-card__label">Anos Formando Experts</span>
-                            <div class="metric-card__progress">
-                                <div class="metric-card__progress-bar" style="width: 100%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+                        <div class="academy-card__body">
+                            <span class="academy-card__tag">Toxina & HA avançado</span>
+                            <h3 class="academy-card__title">Signature Experience 360º</h3>
+                            <p class="academy-card__copy">20h de prática supervisionada com MD Codes, combinações HA + bioestimuladores e gestão de intercorrências.</p>
+                            <ul class="academy-card__list">
+                                <li>Mentoria individual + avaliação de casos</li>
+                                <li>Protocolos exclusivos INNOVA & Exaktus</li>
+                                <li>Material clínico e marketing para pacientes</li>
+                            </ul>
+                            <a class="btn btn--primary" href=
         <!-- TESTEMUNHOS -->
         <section class="testemunhos section" id="testemunhos">
             <div class="container">
