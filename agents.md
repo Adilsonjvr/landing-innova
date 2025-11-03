@@ -19,37 +19,64 @@
 - Conectar portefólio extenso (injectáveis, fios, aparatologia, cosméticos) à jornada de clínicas/parceiros.
 - Garantir performance (CWV), acessibilidade AA e SEO corporativo.
 
-### Stack & Estrutura
+### ⚠️ REBUILD V2.0 – Janeiro 2025
+
+**IMPORTANTE**: O projeto foi completamente reconstruído do zero devido a problemas com a paleta de cores original (excesso de fundos escuros e dourados). A nova versão segue rigorosamente o esquema **branco/preto/cinza** sem acentos coloridos.
+
+**Arquivos ativos (V2.0 Refined)**:
+- `index.html` – Landing completa com 10 seções (690 linhas)
+- `assets/css/style-refined.css` – Design system puro white/black/gray (1100+ linhas)
+- `assets/js/main-refined.js` – Funcionalidades interativas (280 linhas)
+
+**Backups preservados**:
+- `index_backup_dark.html` + `main_backup_dark.css` – Versão original dark theme
+- `index_v1_basic.html` – Primeira versão limpa (básica)
+- `main-clean.js` – Versão básica do JavaScript
+
+**Roadmap de melhorias**: Consultar `ROADMAP-REFINAMENTO.md` para plano detalhado de implementação em 5 fases baseado em análise do mesoestetic.pt.
+
+### Stack & Estrutura (V2.0)
 ```
 innova-landing/
-├── index.html                 # landing principal (fase 2)
+├── index.html                          # landing V2.0 refined (ATIVO)
+├── index_backup_dark.html              # backup versão dark theme
+├── index_v1_basic.html                 # backup versão básica
+├── ROADMAP-REFINAMENTO.md              # plano de melhorias detalhado
 ├── assets/
 │   ├── css/
-│   │   ├── main.css           # design system e estilos globais
-│   │   └── critical.css       # recorte crítico (header + hero)
+│   │   ├── style-refined.css           # ATIVO - design system V2.0
+│   │   └── main_backup_dark.css        # backup dark theme
 │   ├── js/
-│   │   ├── main.js            # interações gerais (nav, Swiper, IO, form)
-│   │   ├── lazy-load.js       # fallback para lazy loading
-│   │   ├── modal.js           # modal de orçamento (em revisão)
-│   │   └── gsap-animations.js # opcional (hooks GSAP)
-│   ├── images/                # imagens originais + novas variações
+│   │   ├── main-refined.js             # ATIVO - funcionalidades V2.0
+│   │   └── main-clean.js               # versão básica
+│   ├── images/                         # imagens originais + variações
 │   └── icons/
-├── checklist.md               # checklist QA (precisa atualização)
-├── innova.md                  # inventário comercial (fonte de copy)
-├── produto-botox.html         # experimento antigo (não atualizado)
-├── README.md                  # instruções gerais (precisa sync)
-└── agents.md                  # ESTE DOCUMENTO
+├── checklist.md                        # checklist QA
+├── innova.md                           # inventário comercial
+├── README.md                           # instruções gerais
+└── agents.md                           # ESTE DOCUMENTO
 ```
 
-Dependências externas carregadas via CDN:
-- **Fonts**: Manrope, Inter, Playfair Display (Google Fonts).
-- **Swiper 10**: carrossel testimoniais.
-- **AOS 2.3.1**: efeitos de entrada (com fallback em JS personalizado).
-- **GSAP** (core + ScrollTrigger): reservado para animações avançadas (não obrigatório).
+Dependências externas (V2.0):
+- **Font**: Inter (Google Fonts) – família única para todo o projeto
+- **Vanilla JavaScript** – sem dependências externas, tudo nativo
+- **Intersection Observer API** – para animações on scroll
+- **Future**: Swiper.js será adicionado na Fase 2 para carrosseis
 
 ---
 
-## 2. Diretrizes de Design (Lumen Edition)
+## 2. Diretrizes de Design V2.0 (White & Black Edition)
+
+> **⚠️ MUDANÇA IMPORTANTE V2.0**: Paleta de cores foi completamente reformulada. Versão anterior (Lumen Edition) usava dourados/champagne/emerald - **DESCONTINUADA**. Nova versão usa exclusivamente branco/preto/cinza. Para tokens atualizados, consultar `assets/css/style-refined.css`.
+
+### Inspiração & Referências
+- **Mesoestetic.pt**: Design clean, minimalista, com hierarquia clara usando apenas escala de cinza
+- **Screenshots analisados** (4 imagens fornecidas em 2025-01):
+  1. Hero com carousel de produtos e imagens lifestyle
+  2. Seção magazine/blog editorial
+  3. Best sellers com sistema de tabs
+  4. Barra de categorias com ícones + grid lifestyle
+- **Ver detalhes**: `ROADMAP-REFINAMENTO.md` contém análise completa e plano de implementação em 5 fases
 
 ### Princípios gerais
 1. **Paleta base branco & preto** – fundo predominantemente claro (`#f6f4ef` / branco) com tipografia preta/cinza profundo. Usar blocos escuros apenas quando necessário (hero, highlights, glass cards).
@@ -81,27 +108,66 @@ Dependências externas carregadas via CDN:
 }
 ```
 
-> ⚠️ Manter fundos brancos/cinza-claro para main content. Reservar `--gradient-obsidian` para hero ou blocos premium específicos. Sempre garantir legibilidade (texto preto sobre branco; texto claro sobre blocos escuros).
+> ⚠️ **DESCONTINUADO**: Tokens acima são da versão Lumen Edition (dark theme com dourado/emerald). NÃO USAR.
 
-### Layout & Grid
+### Tokens V2.0 (`style-refined.css`) - ATIVOS
+```css
+:root {
+  /* Colors - APENAS PRETO, BRANCO E CINZA */
+  --white: #ffffff;
+  --white-warm: #fafafa;
+  --black: #0a0a0a;
+  --gray-50: #f9f9f9;
+  --gray-100: #f4f4f4;
+  --gray-200: #e5e5e5;
+  --gray-300: #d4d4d4;
+  --gray-400: #a3a3a3;
+  --gray-500: #737373;
+  --gray-600: #525252;
+  --gray-700: #404040;
+  --gray-800: #262626;
+  --gray-900: #171717;
+
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing (8px base) */
+  --spacing-xs: 0.5rem;   /* 8px */
+  --spacing-sm: 1rem;     /* 16px */
+  --spacing-md: 1.5rem;   /* 24px */
+  --spacing-lg: 2rem;     /* 32px */
+  --spacing-xl: 3rem;     /* 48px */
+  --spacing-2xl: 4rem;    /* 64px */
+  --spacing-3xl: 6rem;    /* 96px */
+  --spacing-4xl: 8rem;    /* 128px */
+  --spacing-5xl: 10rem;   /* 160px */
+
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+```
+
+> **REGRA CRÍTICA V2.0**: Hierarquia visual através de peso de fonte, tamanho, espaçamento, opacidade e sombras sutis. Sem cores além de white/black/gray.
+
+### Layout & Grid (V2.0)
 - Container máx. 1280 px (90 vw).
 - Grid 12 colunas (`display: grid / repeat(12, 1fr)`).
 - Espaçamentos escalonados (8px → 128px).
 - Breakpoints: 640, 768, 1024, 1280, 1536 px (mobile first).
 
-### Componentes notáveis
-| Componente | Descrição |
-| --- | --- |
-| **Header “Floating Capsule”** | Barra utilitária + nav 3 colunas + CTA; comportamento sticky com blur e indicador ativo. |
-| **Hero “Precision Ritual”** | Grid 7/5; copy modular + métricas + imagem editorial 4:5; CTAs duplos. |
-| **Signature Range** | Cards facetados (glass), badges translúcidas, CTA com underline animado. |
-| **Innova Standard** | Manifesto + linha do tempo vertical + grid 2×2 de “stickers” glass. |
-| **Partnership Flow** | Timeline horizontal (Swiper não necessário) com 4 fases, imagens circulares, micro CTAs. |
-| **Luxe Academy** | Bento grid (masterclass, atelier, immersive) com highlight ribbon e dados de formação. |
-| **Voices from the Field** | Swiper 3 slides (desktop) com progress bar segmentada e navegação custom. |
-| **FAQ** | Accordion acessível (botões, ícone +/–, transição max-height). Inclui sidebar “Precision concierge”. |
-| **CTA final** | Bloco gradient-dourado com badge, destaques e CTAs (solid + ghost). |
-| **Contacto** | Grid 2 colunas: cartão concierge + mapa + credenciais / formulário com labels flutuantes e feedback inline. |
+### Componentes V2.0 (Refined)
+| Componente | Descrição | Status |
+| --- | --- | --- |
+| **Top Bar** | Barra preta no topo com mensagens de portes grátis e apoio especializado | ✅ Implementado |
+| **Header** | Nav sticky com backdrop-filter blur, logo INNOVA by Exaktus, mobile menu com hamburger animado | ✅ Implementado |
+| **Hero** | Badges horizontais + título modular (Precision. Harmony. Beauty.) + estatísticas (5000+, 15, 48h) | ✅ Implementado |
+| **Features** | Grid 4 colunas com SVG icons: Garantia, Envio, Suporte, Certificações | ✅ Implementado |
+| **Produtos** | 6 cards com imagens, badges (Novo, Mais Vendido), descrições e CTAs | ✅ Implementado |
+| **Marcas** | Grid 6 logos em grayscale com hover | ✅ Implementado |
+| **Sobre** | Conteúdo + 4 estatísticas animadas (anos, produtos, profissionais, países) | ✅ Implementado |
+| **Certificações** | 3 cards ISO + trust badges (origem, pagamento, privacidade) | ✅ Implementado |
+| **Contacto** | Grid 2 colunas: info + mapa / formulário completo com validação | ✅ Implementado |
+| **Footer** | 4 colunas (navegação, categorias, formação, legal) + social icons + copyright | ✅ Implementado |
 
 ---
 
@@ -122,9 +188,89 @@ Dependências externas carregadas via CDN:
 
 ---
 
-## 4. Estado Atual (Abrangência por Fase)
+## 4. Estado Atual V2.0 (Janeiro 2025)
 
-### ✅ Fase 0 — Discovery & Arquitetura
+### 🔄 STATUS GERAL
+**Landing principal**: 80% completa - **PRONTA PARA MOSTRAR A CLIENTE**
+**Versão ativa**: V2.0 Refined (rebuild completo em Janeiro 2025)
+**Motivo do rebuild**: Paleta de cores incorreta (dark theme com dourado/emerald)
+**Roadmap de melhorias**: Consultar `ROADMAP-REFINAMENTO.md` para próximos passos
+
+### ✅ V2.0 REFINED — Implementação Completa
+
+**Arquivos principais**:
+- `index.html` (690 linhas) - Landing completa com 10 seções
+- `assets/css/style-refined.css` (1100+ linhas) - Design system white/black/gray
+- `assets/js/main-refined.js` (280 linhas) - Funcionalidades interativas
+
+**10 Seções implementadas**:
+1. ✅ Top Bar - Mensagens de benefícios (portes grátis, apoio especializado)
+2. ✅ Header - Navegação sticky com backdrop-filter blur + mobile menu animado
+3. ✅ Hero - Badges horizontais + título modular + 3 estatísticas com counter animation
+4. ✅ Features - Grid 4 colunas com SVG icons (garantia, envio, suporte, certificações)
+5. ✅ Produtos - 6 cards com imagens, badges (Novo/Mais Vendido), descrições e CTAs
+6. ✅ Marcas - Grid 6 logos com grayscale hover effect
+7. ✅ Sobre - Conteúdo institucional + 4 estatísticas animadas
+8. ✅ Certificações - 3 ISO cards + trust badges (origem, pagamento, privacidade)
+9. ✅ Contacto - Grid 2 colunas: info + mapa / formulário com validação
+10. ✅ Footer - 4 colunas (navegação, categorias, formação, legal) + social icons
+
+**Funcionalidades JavaScript ativas**:
+- Mobile menu toggle com hamburger animado (X quando aberto)
+- Smooth scroll para âncoras internas
+- Header shadow on scroll (aparece após 50px)
+- Form validation completa (email regex, telefone, campos obrigatórios)
+- Intersection Observer para animações on-scroll com delays escalonados
+- Counter animations para estatísticas (5000+, 15+, 48h+)
+- Active navigation link tracking baseado em scroll position
+- Lazy load para imagens com fade-in
+- Click outside para fechar menu mobile
+- Update automático do ano no footer
+
+**Responsividade**:
+- Mobile-first design
+- Breakpoints: 640px, 768px, 968px, 1280px
+- Grid adaptativo (1 col mobile → 2-4 cols desktop)
+- Mobile menu overlay funcional
+
+### 🔄 Próximas Melhorias (ROADMAP-REFINAMENTO.md)
+
+> **IMPORTANTE**: Consultar `ROADMAP-REFINAMENTO.md` para plano detalhado em 5 fases baseado em análise do mesoestetic.pt
+
+**Fase 1 - Quick improvements** (2-3h estimadas):
+- Barra de categorias com ícones
+- Sistema de tabs (Best Sellers / Novidades)
+- Melhorar cards de produtos (layout grid, preços)
+- Hover zoom em imagens de produtos
+
+**Fase 2 - Advanced features** (3-4h estimadas):
+- Hero carousel com Swiper.js (produtos em destaque)
+- Grid de categorias lifestyle com imagens
+- Seção magazine/blog editorial
+- Seção "What's New" com últimas notícias
+
+**Fases seguintes**: Performance, páginas secundárias, integrações backend
+
+---
+
+### 📦 Histórico de Versões (Referência)
+
+#### V1.0 Lumen Edition (DESCONTINUADA)
+**Problema**: Excesso de fundos escuros, cores douradas/champagne/emerald não solicitadas
+**Backup preservado**: `index_backup_dark.html` + `main_backup_dark.css`
+
+#### V1.5 Basic (DESCONTINUADA)
+**Problema**: Muito minimalista, faltava conteúdo profissional
+**Backup preservado**: `index_v1_basic.html` + `main-clean.js`
+
+#### V2.0 Refined (ATIVA)
+**Solução**: Rebuild completo do zero com paleta white/black/gray, 10 seções completas, funcionalidades essenciais
+
+---
+
+### 🗂️ Fases Históricas (Contexto de desenvolvimento antigo)
+
+### ✅ Fase 0 — Discovery & Arquitetura (Concluída)
 - Arquitetura de pastas definida.
 - Inventário comercial completo (`innova.md`).
 - Convenções de slugs (landing, hubs por categoria, produto individual).
@@ -153,34 +299,59 @@ Dependências externas carregadas via CDN:
 
 ---
 
-## 5. Tarefas Imediatas (Prioridades 0–2)
+## 5. Tarefas Imediatas V2.0 (Próximos Passos)
 
-1. **Imagens otimizadas**  
-   - Exportar variações WebP/AVIF para hero, processo, academy nas proporções definidas (desktop/tablet/mobile).  
-   - Atualizar `<picture>` tags em `index.html`.  
-   - Remover referências a imagens antigas que foram deletadas.
+> **📋 CONSULTAR `ROADMAP-REFINAMENTO.md` PARA PLANO DETALHADO**
 
-2. **Checklist QA (`checklist.md`)**  
-   - Atualizar com blocos: Responsividade (breakpoints), Performance (CWV com metas), Acessibilidade (axe/Lighthouse), SEO (metas/OG/schema), Funcionalidades (Swiper, nav, forms), Cross-browser, Validações W3C.
+### 🎯 TOP 3 PRIORIDADES (Baseado em mesoestetic.pt)
 
-3. **Copy & CTAs**  
-   - Revisar seções ainda genéricas na landing para injetar dados de portefólio (HA, bioestimuladores, fios, aparatologia).  
-   - Garantir CTAs apontando para futuras categorias (mesmo que placeholders).
+1. **⭐⭐⭐ Barra de Categorias com Ícones** (45min)
+   - Criar barra horizontal com 6 categorias principais
+   - Adicionar ícones SVG para cada categoria
+   - Implementar scroll horizontal em mobile
+   - Arquivo: Adicionar seção em `index.html` após hero
 
-4. **Planeamento Fase 3**  
-   - Criar `produtos/index.html` com visão geral das categorias + cards.  
-   - Definir template base reutilizável (componentização manual ou includes parciais se necessário).  
-   - Mapear assets necessários por categoria (usar imagens já adicionadas às novas pastas).
+2. **⭐⭐⭐ Sistema de Tabs (Best Sellers / Novidades)** (40min)
+   - Adicionar tabs na seção de produtos
+   - JavaScript para alternar entre tabs
+   - Manter mesmos cards, apenas filtrar visualização
+   - Arquivo: Modificar seção `.produtos` existente
 
-5. **Documentação**  
-   - Rever `README.md` para refletir fluxo atual (critical CSS, carregamento assíncrono, dependências).
-   - Registrar próximos hand-offs e convenções de copy neste `agents.md`.
+3. **⭐⭐ Hero Carousel com Swiper.js** (90min)
+   - Integrar Swiper.js (CDN)
+   - Criar slides com produtos + imagens lifestyle
+   - Navigation arrows + pagination dots
+   - Arquivo: Modificar seção `.hero` existente
+
+### 🚀 QUICK WINS (15-30min cada)
+
+1. **Hover zoom em imagens de produtos** (15min)
+   - CSS transform: scale(1.05) com overflow: hidden
+   - Arquivo: `style-refined.css` seção `.product-card`
+
+2. **Melhorar layout cards de produtos** (30min)
+   - Ajustar grid para 3 colunas consistente
+   - Adicionar placeholders de preços
+   - Arquivo: `style-refined.css` + `index.html`
+
+3. **Active states mais evidentes** (20min)
+   - Melhorar hover states de buttons e links
+   - Adicionar underline animation
+   - Arquivo: `style-refined.css`
+
+### 📋 Implementação Fases 2-5
+
+**Consultar seções detalhadas em `ROADMAP-REFINAMENTO.md`**:
+- **Fase 2**: Grid lifestyle, seção magazine, What's New (3-4h)
+- **Fase 3**: Performance & polish, otimizações (2-3h)
+- **Fase 4**: Páginas secundárias (Sobre, Formações) (4-5h)
+- **Fase 5**: Integração backend, deploy (2-3h)
 
 ---
 
-## 6. Guia Técnico de Implementação
+## 6. Guia Técnico de Implementação V2.0
 
-### CSS
+### CSS V2.0 (`style-refined.css`)
 - **critical.css**: contém reset mínimo + header + hero. Manter focado no “acima da dobra”.  
 - **main.css**: segue seções moduladas (consultar comentários). Quando criar novos componentes, manter padrão de comentários e mobile-first.
 - Responsividade: preferir `clamp()` e `grid auto-fit`. Ajustes mobile existentes (ver bloco `@media screen and (max-width: 768px)`).
@@ -253,16 +424,31 @@ Checklist recomendado (a preencher):
 
 ---
 
-## 10. Apêndice – Recursos e Inspirações
+## 10. Apêndice – Recursos e Inspirações V2.0
 
-- Moodboard: editoriais de cosmética high-end (Dior Prestige, La Prairie). Destaque para layouts em branco/preto com acentuação dourada.
-- Referências de carrossel: Estée Lauder testimonials, Dior Progress dots.
-- Acessibilidade: consultar WCAG 2.1 AA, W3C validator, axe DevTools.
+### Referências Principais (V2.0)
+- **Mesoestetic.pt** (PRINCIPAL): Design minimalista white/black/gray, hierarquia clara, carrossel hero, tabs, barra de categorias
+- **Screenshots analisados** (4 imagens, Janeiro 2025): Hero carousel, magazine section, best sellers tabs, category bar
+- **Moodboard**: Minimalismo editorial, contraste alto, tipografia como elemento visual principal
+- **Acessibilidade**: WCAG 2.1 AA, W3C validator, axe DevTools
+
+### Referências Históricas (Descontinuadas)
+- ~~Dior Prestige, La Prairie (acentuação dourada)~~ - Não aplicável em V2.0
+- ~~Estée Lauder, Dior Progress dots~~ - Substituído por referência Mesoestetic
+
+### Documentos do Projeto
+- `ROADMAP-REFINAMENTO.md` - Plano detalhado de melhorias em 5 fases
+- `innova.md` - Inventário comercial completo
+- `checklist.md` - QA e testes
+- `README.md` - Instruções gerais (precisa atualização)
 
 ---
 
 ### Última atualização
-- **Data**: 2025-02-14
-- **Responsável**: Codex (GPT-5) – sessão Lumen Edition
+- **Data**: 2025-01-03
+- **Responsável**: Claude (Sonnet 4.5) – sessão V2.0 Rebuild
+- **Versão**: V2.0 Refined - Rebuild completo white/black/gray
+- **Status**: Landing 80% completa, pronta para apresentar a cliente
+- **Próximos passos**: Implementar melhorias da Fase 1 do ROADMAP-REFINAMENTO.md
 
-> Ao finalizar novas tarefas ou fases, atualizar este handbook antes de prosseguir. Mantê-lo sincronizado é essencial para continuidade entre agentes. Sucesso na próxima iteração! 💡
+> **IMPORTANTE**: Ao retomar trabalho, sempre consultar `ROADMAP-REFINAMENTO.md` para próximas prioridades. Manter este handbook e README.md sincronizados. Sucesso na próxima iteração! 💡
