@@ -328,7 +328,39 @@
     images.forEach(img => imageObserver.observe(img));
 
     // ========================================
-    // 11. CONSOLE MESSAGE
+    // 11. PRODUCT TABS FILTER
+    // ========================================
+
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    if (tabButtons.length > 0 && productCards.length > 0) {
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const targetCategory = this.getAttribute('data-tab');
+
+                // Update active button
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                // Filter products
+                productCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+
+                    if (targetCategory === 'all') {
+                        card.classList.remove('hidden');
+                    } else if (cardCategory === targetCategory) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    }
+
+    // ========================================
+    // 12. CONSOLE MESSAGE
     // ========================================
 
     console.log('%cINNOVA', 'font-size: 48px; font-weight: bold; color: #0a0a0a;');

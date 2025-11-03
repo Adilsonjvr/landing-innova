@@ -198,8 +198,14 @@ button {
     color: var(--black);
 }
 
-.nav-link:not(.btn-primary):hover::after {
+.nav-link:not(.btn-primary):hover::after,
+.nav-link:not(.btn-primary).active::after {
     transform: scaleX(1);
+}
+
+.nav-link:not(.btn-primary).active {
+    color: var(--black);
+    font-weight: 600;
 }
 
 .nav-link.btn-primary {
@@ -212,6 +218,13 @@ button {
 
 .nav-link.btn-primary:hover {
     background: var(--gray-800);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-link.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-toggle {
@@ -369,6 +382,105 @@ button {
 }
 
 /* ========================================
+   4. CATEGORIAS
+   ======================================== */
+
+.categorias {
+    background: var(--white);
+    padding: var(--spacing-lg) 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.categorias-scroll {
+    display: flex;
+    gap: var(--spacing-sm);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    padding: var(--spacing-xs) 0;
+}
+
+.categorias-scroll::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.categoria-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--gray-700);
+    min-width: 140px;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.categoria-item:hover {
+    background: var(--gray-50);
+    border-color: var(--black);
+    color: var(--black);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.categoria-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-50);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.categoria-item:hover .categoria-icon {
+    background: var(--black);
+    color: var(--white);
+}
+
+.categoria-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+}
+
+.categoria-item span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .categorias {
+        padding: var(--spacing-md) 0;
+    }
+
+    .categoria-item {
+        min-width: 120px;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .categoria-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .categoria-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ========================================
    6. BUTTONS
    ======================================== */
 
@@ -382,6 +494,7 @@ button {
     border-radius: 6px;
     transition: var(--transition);
     border: 2px solid transparent;
+    text-decoration: none;
 }
 
 .btn-large {
@@ -397,6 +510,12 @@ button {
 .btn:not(.btn-outline):hover {
     background: var(--gray-800);
     transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.btn:not(.btn-outline):active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn-outline {
@@ -408,6 +527,13 @@ button {
 .btn-outline:hover {
     border-color: var(--black);
     background: var(--gray-50);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.btn-outline:active {
+    transform: translateY(0);
+    box-shadow: none;
 }
 
 .btn-full {
@@ -522,19 +648,82 @@ button {
 }
 
 /* ========================================
+   8. PRODUCT TABS
+   ======================================== */
+
+.product-tabs {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-3xl);
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tab-btn:hover {
+    background: var(--gray-50);
+    border-color: var(--gray-300);
+    color: var(--black);
+}
+
+.tab-btn.active {
+    background: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+}
+
+.product-card {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.product-card.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .product-tabs {
+        gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .tab-btn {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: 0.875rem;
+    }
+}
+
+/* ========================================
    9. PRODUCTS GRID
    ======================================== */
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-2xl);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
     .products-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
 }
 
@@ -583,6 +772,11 @@ button {
     height: 56px;
     margin-bottom: var(--spacing-md);
     color: var(--black);
+    transition: var(--transition);
+}
+
+.product-card:hover .product-icon {
+    transform: scale(1.15) rotate(5deg);
 }
 
 .product-icon svg {
@@ -652,10 +846,28 @@ button {
     color: var(--black);
     display: inline-flex;
     align-items: center;
+    position: relative;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.product-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--black);
+    transition: width 0.3s ease;
 }
 
 .product-link:hover {
-    text-decoration: underline;
+    color: var(--gray-700);
+}
+
+.product-link:hover::after {
+    width: 100%;
 }
 
 .section-cta {
