@@ -23,6 +23,9 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://innova.pt">
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style-refined.css">
 </head>
@@ -61,48 +64,140 @@
         </div>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO CAROUSEL -->
     <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badges">
-                    <span class="badge">+15 Anos de Excelência</span>
-                    <span class="badge">ISO 13485 Certified</span>
+        <div class="hero-swiper swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 - Main -->
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="hero-content">
+                            <div class="hero-badges">
+                                <span class="badge">+15 Anos de Excelência</span>
+                                <span class="badge">ISO 13485 Certified</span>
+                            </div>
+
+                            <h1 class="hero-title">
+                                <span class="title-line">Precision.</span>
+                                <span class="title-line">Harmony.</span>
+                                <span class="title-line">Beauty.</span>
+                            </h1>
+
+                            <p class="hero-subtitle">Medicina Estética Premium</p>
+
+                            <p class="hero-description">
+                                Distribuidor oficial em Portugal das marcas mais reconhecidas em medicina estética.<br>
+                                Produtos de excelência para profissionais exigentes.
+                            </p>
+
+                            <div class="hero-stats">
+                                <div class="stat">
+                                    <strong>5000+</strong>
+                                    <span>Profissionais</span>
+                                </div>
+                                <div class="stat">
+                                    <strong>50+</strong>
+                                    <span>Produtos Premium</span>
+                                </div>
+                                <div class="stat">
+                                    <strong>10+</strong>
+                                    <span>Marcas Internacionais</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-cta">
+                                <a href="#produtos" class="btn btn-large">Explorar Produtos</a>
+                                <a href="#contacto" class="btn btn-outline btn-large">Tornar-me Parceiro</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <h1 class="hero-title">
-                    <span class="title-line">Precision.</span>
-                    <span class="title-line">Harmony.</span>
-                    <span class="title-line">Beauty.</span>
-                </h1>
+                <!-- Slide 2 - Bioestimuladores -->
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="hero-content">
+                            <div class="hero-badges">
+                                <span class="badge">Novidade</span>
+                                <span class="badge">Tecnologia PLLA</span>
+                            </div>
 
-                <p class="hero-subtitle">Medicina Estética Premium</p>
+                            <h1 class="hero-title">
+                                <span class="title-line">Bioestimuladores</span>
+                                <span class="title-line">de Nova Geração</span>
+                            </h1>
 
-                <p class="hero-description">
-                    Distribuidor oficial em Portugal das marcas mais reconhecidas em medicina estética.<br>
-                    Produtos de excelência para profissionais exigentes.
-                </p>
+                            <p class="hero-subtitle">Regeneração Profunda e Duradoura</p>
 
-                <div class="hero-stats">
-                    <div class="stat">
-                        <strong>5000+</strong>
-                        <span>Profissionais</span>
-                    </div>
-                    <div class="stat">
-                        <strong>50+</strong>
-                        <span>Produtos Premium</span>
-                    </div>
-                    <div class="stat">
-                        <strong>10+</strong>
-                        <span>Marcas Internacionais</span>
+                            <p class="hero-description">
+                                PLLA, CaHA e PCL com resultados até 24 meses.<br>
+                                Estimule a neocolagénese com eficácia comprovada.
+                            </p>
+
+                            <div class="hero-features">
+                                <div class="feature">✓ Resultados até 24 meses</div>
+                                <div class="feature">✓ Neocolagénese comprovada</div>
+                                <div class="feature">✓ Face, pescoço e corpo</div>
+                            </div>
+
+                            <div class="hero-cta">
+                                <a href="#produtos" class="btn btn-large">Ver Bioestimuladores</a>
+                                <a href="#contacto" class="btn btn-outline btn-large">Solicitar Informação</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="hero-cta">
-                    <a href="#produtos" class="btn btn-large">Explorar Produtos</a>
-                    <a href="#contacto" class="btn btn-outline btn-large">Tornar-me Parceiro</a>
+                <!-- Slide 3 - Profhilo -->
+                <div class="swiper-slide">
+                    <div class="container">
+                        <div class="hero-content">
+                            <div class="hero-badges">
+                                <span class="badge">Best Seller</span>
+                                <span class="badge">Premium</span>
+                            </div>
+
+                            <h1 class="hero-title">
+                                <span class="title-line">Profhilo®</span>
+                                <span class="title-line">& Skinboosters</span>
+                            </h1>
+
+                            <p class="hero-subtitle">Hidratação e Bioestimulação Híbrida</p>
+
+                            <p class="hero-description">
+                                Tecnologia NAHYCO® com resultados visíveis e naturais.<br>
+                                A revolução no tratamento da qualidade da pele.
+                            </p>
+
+                            <div class="hero-features">
+                                <div class="feature">✓ Tecnologia NAHYCO® híbrida</div>
+                                <div class="feature">✓ Protocolo 2 sessões em 4 semanas</div>
+                                <div class="feature">✓ Resultados naturais e visíveis</div>
+                            </div>
+
+                            <div class="hero-cta">
+                                <a href="#produtos" class="btn btn-large">Descobrir Profhilo®</a>
+                                <a href="#contacto" class="btn btn-outline btn-large">Tornar-me Parceiro</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Navigation -->
+            <div class="hero-swiper-button-prev">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </div>
+            <div class="hero-swiper-button-next">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </div>
+
+            <!-- Pagination -->
+            <div class="hero-swiper-pagination"></div>
         </div>
     </section>
 
@@ -752,6 +847,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/main-refined.js"></script>
 
 </body>

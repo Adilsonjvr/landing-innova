@@ -328,7 +328,34 @@
     images.forEach(img => imageObserver.observe(img));
 
     // ========================================
-    // 11. PRODUCT TABS FILTER
+    // 11. HERO SWIPER CAROUSEL
+    // ========================================
+
+    if (typeof Swiper !== 'undefined') {
+        const heroSwiper = new Swiper('.hero-swiper', {
+            loop: true,
+            speed: 800,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            navigation: {
+                nextEl: '.hero-swiper-button-next',
+                prevEl: '.hero-swiper-button-prev',
+            },
+            pagination: {
+                el: '.hero-swiper-pagination',
+                clickable: true,
+            },
+        });
+    }
+
+    // ========================================
+    // 12. PRODUCT TABS FILTER
     // ========================================
 
     const tabButtons = document.querySelectorAll('.tab-btn');
@@ -360,7 +387,7 @@
     }
 
     // ========================================
-    // 12. CONSOLE MESSAGE
+    // 13. CONSOLE MESSAGE
     // ========================================
 
     console.log('%cINNOVA', 'font-size: 48px; font-weight: bold; color: #0a0a0a;');
