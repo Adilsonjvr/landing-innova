@@ -67,14 +67,14 @@ window.addEventListener('scroll', () => {
 });
 
 /* ========================================
-   3. SMOOTH SCROLL PARA LINKS ÂNCORA
+   3. SMOOTH SCROLL PARA LINKS Ã‚NCORA
    ======================================== */
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
 
-    // Ignora links vazios ou só com #
+    // Ignora links vazios ou sÃ³ com #
     if (href === '#' || href === '') return;
 
     e.preventDefault();
@@ -158,98 +158,58 @@ accordionItems.forEach(item => {
 });
 
 /* ========================================
-   6. TESTIMONIAL CAROUSEL
+   6. VOICES CAROUSEL (Swiper)
    ======================================== */
 
-const carousel = document.querySelector('.testimonials__carousel');
-const slides = document.querySelectorAll('.testimonial-card');
-const dots = document.querySelectorAll('.carousel__dot');
+const voicesSwiperElement = document.querySelector('.voices-swiper');
 
-if (carousel && slides.length > 0) {
-  let currentSlide = 0;
-  let autoplayInterval;
+if (voicesSwiperElement) {
+  if (window.Swiper) {
+    const progressSegments = document.querySelectorAll('.voices__progress-segment');
 
-  // Ir para slide específico
-  function goToSlide(index) {
-    currentSlide = index;
-    carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-    // Atualizar dots
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === currentSlide);
-    });
-  }
-
-  // Próximo slide
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    goToSlide(currentSlide);
-  }
-
-  // Slide anterior
-  function prevSlide() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    goToSlide(currentSlide);
-  }
-
-  // Iniciar autoplay
-  function startAutoplay() {
-    autoplayInterval = setInterval(nextSlide, 5000);
-  }
-
-  // Parar autoplay
-  function stopAutoplay() {
-    clearInterval(autoplayInterval);
-  }
-
-  // Dots navigation
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      goToSlide(index);
-      stopAutoplay();
-      startAutoplay(); // Reiniciar autoplay
-    });
-  });
-
-  // Pause on hover
-  const testimonialsWrapper = document.querySelector('.testimonials__wrapper');
-  if (testimonialsWrapper) {
-    testimonialsWrapper.addEventListener('mouseenter', stopAutoplay);
-    testimonialsWrapper.addEventListener('mouseleave', startAutoplay);
-  }
-
-  // Swipe gestures para mobile
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  carousel.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-
-  carousel.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, { passive: true });
-
-  function handleSwipe() {
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
-
-    if (Math.abs(diff) > swipeThreshold) {
-      if (diff > 0) {
-        // Swipe left - próximo
-        nextSlide();
-      } else {
-        // Swipe right - anterior
-        prevSlide();
+    const voicesSwiper = new Swiper('.voices-swiper', {
+      slidesPerView: 1.1,
+      spaceBetween: 18,
+      loop: true,
+      speed: 750,
+      autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
+      navigation: {
+        prevEl: '.voices__control--prev',
+        nextEl: '.voices__control--next'
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1.4,
+          spaceBetween: 22
+        },
+        768: {
+          slidesPerView: 2.1,
+          spaceBetween: 26
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 32
+        }
       }
-      stopAutoplay();
-      startAutoplay();
-    }
-  }
+    });
 
-  // Iniciar autoplay
-  startAutoplay();
+    const updateVoicesProgress = (index) => {
+      if (!progressSegments.length) return;
+      const activeIndex = ((index % progressSegments.length) + progressSegments.length) % progressSegments.length;
+      progressSegments.forEach((segment, segmentIndex) => {
+        segment.classList.toggle('is-active', segmentIndex === activeIndex);
+      });
+    };
+
+    voicesSwiper.on('slideChange', () => updateVoicesProgress(voicesSwiper.realIndex));
+    updateVoicesProgress(voicesSwiper.realIndex || 0);
+  } else {
+    console.warn('Swiper nao encontrado. Carregue o CDN antes de main.js.');
+  }
 }
 
 /* ========================================
@@ -259,9 +219,9 @@ if (carousel && slides.length > 0) {
 const counters = document.querySelectorAll('.stat__number');
 
 function animateCounter(counter) {
-  const target = parseInt(counter.getAttribute('data-target'));
-  const duration = 2000; // 2 segundos
-  const increment = target / (duration / 16); // 60fps
+  const target = parseInt(counter.getAttribute('data-target'), 10);
+  const duration = 2000;
+  const increment = target / (duration / 16);
   let current = 0;
 
   const updateCounter = () => {
@@ -277,7 +237,6 @@ function animateCounter(counter) {
   updateCounter();
 }
 
-// Intersection Observer para animar quando visível
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
@@ -292,121 +251,134 @@ const counterObserver = new IntersectionObserver((entries) => {
 counters.forEach(counter => counterObserver.observe(counter));
 
 /* ========================================
-   8. FORM VALIDATION & SUBMIT
+   8. SCROLL REVEAL OBSERVER
+   ======================================== */
+
+const revealElements = document.querySelectorAll('[data-io]');
+
+if (revealElements.length) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      if (entry.target.dataset.ioAnimated === 'true') {
+        observer.unobserve(entry.target);
+        return;
+      }
+
+      const delay = Number.parseInt(entry.target.dataset.ioDelay, 10) || 0;
+      entry.target.dataset.ioAnimated = 'true';
+
+      setTimeout(() => {
+        entry.target.classList.add('is-visible');
+      }, delay);
+
+      observer.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.24,
+    rootMargin: '0px 0px -10% 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+}
+
+/* ========================================
+   9. FORM VALIDATION & SUBMIT
    ======================================== */
 
 const contactForm = document.getElementById('contact-form');
+const formFeedback = contactForm ? contactForm.querySelector('.form__feedback') : null;
 
 if (contactForm) {
+  const floatFields = contactForm.querySelectorAll('.form__input, .form__select, .form__textarea');
+
+  floatFields.forEach(field => {
+    const group = field.closest('.form__group');
+    if (!group) return;
+
+    const syncState = () => {
+      const hasValue = field.value && field.value.trim() !== '';
+      group.classList.toggle('is-filled', hasValue);
+    };
+
+    field.addEventListener('input', syncState);
+    field.addEventListener('change', syncState);
+    field.addEventListener('blur', syncState);
+    syncState();
+  });
+
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const submitBtn = contactForm.querySelector('.form__submit');
     const originalText = submitBtn.textContent;
 
-    // Validação HTML5 nativa
     if (!contactForm.checkValidity()) {
       contactForm.reportValidity();
       return;
     }
 
-    // Obter dados do formulário
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData.entries());
 
-    // Desabilitar botão e mostrar loading
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span style="display:inline-block;width:16px;height:16px;border:2px solid currentColor;border-top-color:transparent;border-radius:50%;animation:spin 0.6s linear infinite;"></span> A enviar...';
 
     try {
-      // Simular API call (substituir por endpoint real)
       await new Promise(resolve => setTimeout(resolve, 2000));
 
-      // Simular sucesso
-      console.log('Dados do formulário:', data);
+      console.log('Dados do formulario:', data);
 
-      // Mostrar mensagem de sucesso
-      showMessage('Mensagem enviada com sucesso! Entraremos em contacto em breve.', 'success');
-
-      // Limpar formulário
+      showFormMessage('Mensagem enviada com sucesso! Entraremos em contacto em breve.', 'success');
       contactForm.reset();
+      floatFields.forEach(field => {
+        const group = field.closest('.form__group');
+        if (group) group.classList.remove('is-filled');
+      });
 
     } catch (error) {
-      console.error('Erro ao enviar formulário:', error);
-      showMessage('Erro ao enviar mensagem. Por favor, tente novamente.', 'error');
+      console.error('Erro ao enviar formulario:', error);
+      showFormMessage('Erro ao enviar mensagem. Por favor, tente novamente.', 'error');
 
     } finally {
-      // Restaurar botão
       submitBtn.disabled = false;
       submitBtn.textContent = originalText;
     }
   });
 }
 
-// Função para mostrar mensagens
-function showMessage(text, type) {
-  // Remover mensagem anterior se existir
-  const existingMessage = document.querySelector('.form-message');
-  if (existingMessage) {
-    existingMessage.remove();
-  }
+function showFormMessage(text, type) {
+  if (!formFeedback) return;
 
-  // Criar nova mensagem
+  formFeedback.innerHTML = '';
+
   const message = document.createElement('div');
-  message.className = `form-message form-message--${type}`;
-  message.textContent = text;
-  message.style.cssText = `
-    padding: 1rem;
-    margin-top: 1rem;
-    border-radius: 8px;
-    font-weight: 500;
-    animation: slideIn 0.3s ease-out;
-    ${type === 'success'
-      ? 'background: #d4edda; color: #155724; border: 1px solid #c3e6cb;'
-      : 'background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb;'
-    }
-  `;
+  message.className = `form__feedback-message form__feedback-message--${type}`;
 
-  contactForm.appendChild(message);
+  const iconMarkup = type === 'success'
+    ? '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    : '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 9v4m0 4h.01M5.64 5.64l12.72 12.72M18.36 5.64L5.64 18.36" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-  // Remover após 5 segundos
+  message.innerHTML = `${iconMarkup}<span>${text}</span>`;
+  formFeedback.appendChild(message);
+
   setTimeout(() => {
-    message.style.animation = 'slideOut 0.3s ease-out';
-    setTimeout(() => message.remove(), 300);
-  }, 5000);
+    if (message.parentElement === formFeedback) {
+      message.remove();
+    }
+  }, 6000);
 }
 
-// Adicionar animações CSS
 const style = document.createElement('style');
 style.textContent = `
   @keyframes spin {
     to { transform: rotate(360deg); }
   }
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @keyframes slideOut {
-    from {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    to {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-  }
 `;
 document.head.appendChild(style);
 
 /* ========================================
-   9. PERFORMANCE OPTIMIZATIONS
+   10. PERFORMANCE OPTIMIZATIONS
    ======================================== */
 
 // Debounce helper function
@@ -435,19 +407,29 @@ function throttle(func, limit) {
 }
 
 /* ========================================
-   10. INICIALIZAÇÃO
+   11. INICIALIZACAO
    ======================================== */
 
-// Executar quando DOM estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('INNOVA - Landing Page carregada com sucesso! =›');
+  console.log('INNOVA - Landing Page carregada com sucesso!');
 
-  // Verificar scroll inicial
+  if (window.AOS) {
+    AOS.init({
+      duration: 720,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 120
+    });
+    document.body.classList.add('aos-ready');
+  }
+
   scrollHeader();
   scrollActive();
 });
 
-// Executar quando página estiver completamente carregada
 window.addEventListener('load', () => {
   console.log('INNOVA - Todos os recursos carregados!');
+  if (window.AOS) {
+    AOS.refresh();
+  }
 });
