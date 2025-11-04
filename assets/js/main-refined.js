@@ -331,7 +331,12 @@
     // 11. HERO SWIPER CAROUSEL
     // ========================================
 
+    console.log('Swiper disponível?', typeof Swiper !== 'undefined');
+    console.log('Elemento .products-swiper encontrado?', document.querySelector('.products-swiper'));
+
     if (typeof Swiper !== 'undefined') {
+        console.log('✅ Swiper carregado com sucesso');
+
         const heroSwiper = new Swiper('.hero-swiper', {
             loop: true,
             speed: 800,
@@ -357,6 +362,8 @@
         // 11B. PRODUCTS SWIPER CAROUSEL
         // ========================================
 
+        console.log('🔄 Inicializando Products Swiper...');
+
         const productsSwiper = new Swiper('.products-swiper', {
             slidesPerView: 1,
             spaceBetween: 32,
@@ -364,11 +371,11 @@
             speed: 600,
             grabCursor: true,
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.products-swiper .swiper-button-next',
+                prevEl: '.products-swiper .swiper-button-prev',
             },
             pagination: {
-                el: '.swiper-pagination',
+                el: '.products-swiper .swiper-pagination',
                 clickable: true,
                 dynamicBullets: true,
             },
@@ -403,6 +410,9 @@
             }
         });
 
+        console.log('✅ Products Swiper inicializado:', productsSwiper);
+        console.log('Slides totais:', productsSwiper.slides.length);
+
         // Update product tabs to work with carousel
         const carouselTabButtons = document.querySelectorAll('.product-tabs .tab-btn');
         const carouselCards = document.querySelectorAll('.product-card-carousel');
@@ -435,6 +445,9 @@
                 });
             });
         }
+    } else {
+        console.error('❌ ERRO: Swiper.js não foi carregado!');
+        console.log('Verifique se o CDN está acessível: https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
     }
 
     // ========================================
