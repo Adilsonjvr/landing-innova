@@ -187,9 +187,9 @@
         });
     }, observerOptions);
 
-    // Observe elements for animation
+    // Observe elements for animation (exclude carousel cards)
     const animateElements = document.querySelectorAll(
-        '.product-card, .feature-item, .marca-item, .stat-item, .cert-item, .trust-item'
+        '.product-card:not(.product-card-carousel), .feature-item, .marca-item, .stat-item, .cert-item, .trust-item'
     );
 
     animateElements.forEach((el, index) => {
@@ -393,21 +393,7 @@
                     spaceBetween: 40,
                 }
             },
-            // Update animation classes
-            on: {
-                init: function () {
-                    const slides = document.querySelectorAll('.product-card-carousel');
-                    slides.forEach((slide, index) => {
-                        slide.style.opacity = '0';
-                        slide.style.transform = 'translateY(30px)';
-                        setTimeout(() => {
-                            slide.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                            slide.style.opacity = '1';
-                            slide.style.transform = 'translateY(0)';
-                        }, index * 100);
-                    });
-                }
-            }
+            // Cards são visíveis por padrão (animação removida para evitar conflitos)
         });
 
         console.log('✅ Products Swiper inicializado:', productsSwiper);
@@ -451,39 +437,7 @@
     }
 
     // ========================================
-    // 12. PRODUCT TABS FILTER
-    // ========================================
-
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const productCards = document.querySelectorAll('.product-card');
-
-    if (tabButtons.length > 0 && productCards.length > 0) {
-        tabButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const targetCategory = this.getAttribute('data-tab');
-
-                // Update active button
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-
-                // Filter products
-                productCards.forEach(card => {
-                    const cardCategory = card.getAttribute('data-category');
-
-                    if (targetCategory === 'all') {
-                        card.classList.remove('hidden');
-                    } else if (cardCategory === targetCategory) {
-                        card.classList.remove('hidden');
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                });
-            });
-        });
-    }
-
-    // ========================================
-    // 13. CONSOLE MESSAGE
+    // 12. CONSOLE MESSAGE
     // ========================================
 
     console.log('%cINNOVA', 'font-size: 48px; font-weight: bold; color: #0a0a0a;');
