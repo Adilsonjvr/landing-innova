@@ -358,8 +358,8 @@
         // ========================================
 
         const productsSwiper = new Swiper('.products-swiper', {
-            slidesPerView: 1.2,
-            spaceBetween: 20,
+            slidesPerView: 1.3,
+            spaceBetween: 24,
             loop: false,
             speed: 600,
             grabCursor: true,
@@ -374,24 +374,24 @@
             },
             breakpoints: {
                 480: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                640: {
-                    slidesPerView: 2.5,
+                    slidesPerView: 2.2,
                     spaceBetween: 24,
                 },
-                768: {
-                    slidesPerView: 3,
+                640: {
+                    slidesPerView: 2.8,
                     spaceBetween: 28,
                 },
-                1024: {
-                    slidesPerView: 4,
+                768: {
+                    slidesPerView: 3.5,
                     spaceBetween: 32,
                 },
+                1024: {
+                    slidesPerView: 4.5,
+                    spaceBetween: 36,
+                },
                 1280: {
-                    slidesPerView: 5,
-                    spaceBetween: 32,
+                    slidesPerView: 5.5,
+                    spaceBetween: 40,
                 }
             },
             // Update animation classes

@@ -1081,19 +1081,17 @@ h1, h2, h3, h4, h5, h6 {
 .product-card-carousel {
     position: relative;
     background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     width: 100%;
-    height: 280px;
+    height: 240px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 }
 
 .product-card-carousel:hover {
-    border-color: var(--black);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
 
 .product-card-carousel .product-badge {
@@ -1122,13 +1120,13 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     background: var(--white);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
 }
 
 .product-image-carousel img {
     width: 100%;
-    max-width: 160px;
-    height: 160px;
+    max-width: 140px;
+    height: 140px;
     object-fit: contain;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1138,8 +1136,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product-image-carousel.placeholder svg {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     color: var(--gray-400);
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
