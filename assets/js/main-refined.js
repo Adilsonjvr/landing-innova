@@ -352,6 +352,93 @@
                 clickable: true,
             },
         });
+
+        // ========================================
+        // 11B. PRODUCTS SWIPER CAROUSEL
+        // ========================================
+
+        const productsSwiper = new Swiper('.products-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: false,
+            speed: 600,
+            grabCursor: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 32,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 32,
+                },
+                1280: {
+                    slidesPerView: 4,
+                    spaceBetween: 32,
+                }
+            },
+            // Update animation classes
+            on: {
+                init: function () {
+                    const slides = document.querySelectorAll('.product-card-carousel');
+                    slides.forEach((slide, index) => {
+                        slide.style.opacity = '0';
+                        slide.style.transform = 'translateY(30px)';
+                        setTimeout(() => {
+                            slide.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                            slide.style.opacity = '1';
+                            slide.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
+                }
+            }
+        });
+
+        // Update product tabs to work with carousel
+        const carouselTabButtons = document.querySelectorAll('.product-tabs .tab-btn');
+        const carouselCards = document.querySelectorAll('.product-card-carousel');
+
+        if (carouselTabButtons.length > 0 && carouselCards.length > 0) {
+            carouselTabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetCategory = this.getAttribute('data-tab');
+
+                    // Update active button
+                    carouselTabButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter products in carousel
+                    carouselCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        const slide = card.closest('.swiper-slide');
+
+                        if (targetCategory === 'all') {
+                            slide.style.display = 'block';
+                        } else if (cardCategory === targetCategory) {
+                            slide.style.display = 'block';
+                        } else {
+                            slide.style.display = 'none';
+                        }
+                    });
+
+                    // Update swiper after filtering
+                    productsSwiper.update();
+                });
+            });
+        }
     }
 
     // ========================================
