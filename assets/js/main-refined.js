@@ -359,7 +359,7 @@
 
         const productsSwiper = new Swiper('.products-swiper', {
             slidesPerView: 1.2,
-            spaceBetween: 16,
+            spaceBetween: 20,
             loop: false,
             speed: 600,
             grabCursor: true,
@@ -375,23 +375,23 @@
             breakpoints: {
                 480: {
                     slidesPerView: 2,
-                    spaceBetween: 16,
+                    spaceBetween: 20,
                 },
                 640: {
                     slidesPerView: 2.5,
-                    spaceBetween: 20,
+                    spaceBetween: 24,
                 },
                 768: {
                     slidesPerView: 3,
-                    spaceBetween: 20,
+                    spaceBetween: 28,
                 },
                 1024: {
                     slidesPerView: 4,
-                    spaceBetween: 24,
+                    spaceBetween: 32,
                 },
                 1280: {
                     slidesPerView: 5,
-                    spaceBetween: 24,
+                    spaceBetween: 32,
                 }
             },
             // Update animation classes
