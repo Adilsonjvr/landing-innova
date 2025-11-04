@@ -358,8 +358,8 @@
         // ========================================
 
         const productsSwiper = new Swiper('.products-swiper', {
-            slidesPerView: 1.3,
-            spaceBetween: 24,
+            slidesPerView: 1,
+            spaceBetween: 32,
             loop: false,
             speed: 600,
             grabCursor: true,
@@ -374,23 +374,15 @@
             },
             breakpoints: {
                 480: {
-                    slidesPerView: 2.2,
-                    spaceBetween: 24,
-                },
-                640: {
-                    slidesPerView: 2.8,
-                    spaceBetween: 28,
+                    slidesPerView: 2,
+                    spaceBetween: 32,
                 },
                 768: {
-                    slidesPerView: 3.5,
+                    slidesPerView: 3,
                     spaceBetween: 32,
                 },
                 1024: {
-                    slidesPerView: 4.5,
-                    spaceBetween: 36,
-                },
-                1280: {
-                    slidesPerView: 5.5,
+                    slidesPerView: 4,
                     spaceBetween: 40,
                 }
             },

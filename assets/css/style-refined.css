@@ -1070,12 +1070,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .products-swiper {
     padding: var(--spacing-md) 0 var(--spacing-2xl) 0;
-    overflow: visible;
-}
-
-.products-swiper .swiper-slide {
-    width: auto;
-    height: auto;
+    overflow: hidden;
 }
 
 .product-card-carousel {
