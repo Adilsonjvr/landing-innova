@@ -1078,7 +1078,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--gray-200);
     border-radius: 16px;
     overflow: hidden;
-    height: 420px;
+    height: 280px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 }
@@ -1313,21 +1313,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
     .product-card-carousel {
-        height: 380px;
-    }
-
-    .overlay-title {
-        font-size: 1.5rem;
-    }
-
-    .overlay-description {
-        font-size: 0.9375rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .product-card-carousel {
-        height: 360px;
+        height: 260px;
     }
 
     .overlay-title {
@@ -1337,10 +1323,24 @@ h1, h2, h3, h4, h5, h6 {
     .overlay-description {
         font-size: 0.875rem;
     }
+}
+
+@media (max-width: 768px) {
+    .product-card-carousel {
+        height: 280px;
+    }
+
+    .overlay-title {
+        font-size: 1.25rem;
+    }
+
+    .overlay-description {
+        font-size: 0.8125rem;
+    }
 
     .overlay-btn {
-        padding: 0.875rem 1.75rem;
-        font-size: 0.9375rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
     }
 
     .products-swiper .swiper-button-next,
@@ -1357,11 +1357,11 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 640px) {
     .product-card-carousel {
-        height: 340px;
+        height: 320px;
     }
 
     .overlay-title {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
     }
 
     .overlay-brands {
