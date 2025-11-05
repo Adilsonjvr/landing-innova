@@ -304,17 +304,22 @@
     // 10. LAZY LOAD IMAGES
     // ========================================
 
-    const images = document.querySelectorAll('img[src]');
+    // Excluir imagens do carousel que já estão carregadas
+    const images = document.querySelectorAll('img[src]:not(.product-image-carousel img)');
     const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 0.5s ease';
 
-                img.onload = () => {
-                    img.style.opacity = '1';
-                };
+                // Apenas aplicar lazy loading se a imagem ainda não estiver carregada
+                if (!img.complete) {
+                    img.style.opacity = '0';
+                    img.style.transition = 'opacity 0.5s ease';
+
+                    img.onload = () => {
+                        img.style.opacity = '1';
+                    };
+                }
 
                 if (img.dataset.src) {
                     img.src = img.dataset.src;
